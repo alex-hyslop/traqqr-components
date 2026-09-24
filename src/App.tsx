@@ -37,13 +37,13 @@ function App() {
       </section>
 
       <section className="flex flex-col gap-3">
-        <h2 className="text-sm font-medium">With icons</h2>
+        <h2 className="text-sm font-medium">Icon left / right</h2>
         <div className="flex flex-wrap items-center gap-3">
           <Button>
-            <Mail /> Email
+            <Mail data-icon="inline-start" /> Email
           </Button>
           <Button variant="outline">
-            Continue <ChevronRight />
+            Continue <ChevronRight data-icon="inline-end" />
           </Button>
         </div>
       </section>

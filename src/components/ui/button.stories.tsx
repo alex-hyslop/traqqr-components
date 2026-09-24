@@ -62,13 +62,14 @@ export const Sizes: Story = {
 }
 
 export const WithIcons: Story = {
+  name: 'Icon left / right',
   render: () => (
     <div className="flex flex-wrap items-center gap-3">
       <Button>
-        <Mail /> Email
+        <Mail data-icon="inline-start" /> Email
       </Button>
       <Button variant="outline">
-        Continue <ChevronRight />
+        Continue <ChevronRight data-icon="inline-end" />
       </Button>
     </div>
   ),
