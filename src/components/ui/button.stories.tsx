@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { ChevronRight, Loader2, Mail } from 'lucide-react'
+import { ChevronRight, Loader2, Mail, X } from 'lucide-react'
 import { Button } from './button'
 
 const meta = {
@@ -92,5 +92,44 @@ export const AsChild: Story = {
     <Button asChild>
       <a href="https://ui.shadcn.com">Go to shadcn/ui</a>
     </Button>
+  ),
+}
+
+export const DangerButton: Story = {
+  name: 'Danger button',
+  args: { variant: 'destructive', children: 'Delete account' },
+}
+
+export const GhostLinkButton: Story = {
+  name: 'Ghost link button',
+  render: () => (
+    <div className="flex items-center gap-3">
+      <Button variant="ghost">Ghost</Button>
+      <Button variant="link">Link</Button>
+    </div>
+  ),
+}
+
+export const IconButtonClose: Story = {
+  name: 'Icon button (close/x)',
+  render: () => (
+    <Button variant="ghost" size="icon" aria-label="Close">
+      <X />
+    </Button>
+  ),
+}
+
+export const AdvanceRoundButtons: Story = {
+  name: 'Advance round buttons',
+  render: () => (
+    <div className="flex flex-wrap items-center gap-3">
+      <Button className="rounded-full">Rounded</Button>
+      <Button variant="outline" className="rounded-full">
+        Rounded outline
+      </Button>
+      <Button size="icon" className="rounded-full" aria-label="Round icon button">
+        <ChevronRight />
+      </Button>
+    </div>
   ),
 }
