@@ -5,10 +5,6 @@ const meta = {
   title: 'ui/NativeSelect',
   parameters: {
     layout: 'padded',
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=2172-937',
-    },
   },
 } satisfies Meta
 

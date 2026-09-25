@@ -14,10 +14,6 @@ const meta = {
   title: 'ui/Empty',
   parameters: {
     layout: 'padded',
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4151-5594',
-    },
   },
 } satisfies Meta
 

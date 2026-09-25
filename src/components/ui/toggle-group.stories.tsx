@@ -5,10 +5,6 @@ const meta = {
   title: 'ui/ToggleGroup',
   parameters: {
     layout: 'padded',
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=1988-5238',
-    },
   },
 } satisfies Meta
 

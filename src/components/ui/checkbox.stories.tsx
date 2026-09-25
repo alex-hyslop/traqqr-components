@@ -6,10 +6,6 @@ const meta = {
   component: Checkbox,
   parameters: {
     layout: 'centered',
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=1939-2183',
-    },
   },
 } satisfies Meta<typeof Checkbox>
 

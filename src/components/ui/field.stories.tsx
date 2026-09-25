@@ -6,10 +6,6 @@ const meta = {
   title: 'ui/Field',
   parameters: {
     layout: 'padded',
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=1928-3999',
-    },
   },
 } satisfies Meta
 

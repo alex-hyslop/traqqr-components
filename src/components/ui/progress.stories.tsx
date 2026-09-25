@@ -6,10 +6,6 @@ const meta = {
   component: Progress,
   parameters: {
     layout: 'padded',
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=2015-429',
-    },
   },
 } satisfies Meta<typeof Progress>
 

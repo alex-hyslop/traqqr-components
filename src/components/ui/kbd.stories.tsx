@@ -5,10 +5,6 @@ const meta = {
   title: 'ui/Kbd',
   parameters: {
     layout: 'centered',
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=1986-1863',
-    },
   },
 } satisfies Meta
 

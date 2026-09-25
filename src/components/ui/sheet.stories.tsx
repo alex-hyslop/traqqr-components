@@ -15,10 +15,6 @@ const meta = {
   title: 'ui/Sheet',
   parameters: {
     layout: 'padded',
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=2055-1040',
-    },
   },
 } satisfies Meta
 
