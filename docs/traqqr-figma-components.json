@@ -1,0 +1,722 @@
+{
+  "figmaFile": "AuTDmsP70q09vix9pojWv0",
+  "screens": [
+    {
+      "area": "Dashboard",
+      "name": "Dashboard — empty state",
+      "figmaNodeId": "4151:5810",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4151-5810"
+    },
+    {
+      "area": "Sites",
+      "name": "Sites — empty",
+      "figmaNodeId": "4151:7933",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4151-7933"
+    },
+    {
+      "area": "Sites",
+      "name": "Sites — populated",
+      "figmaNodeId": "4149:5314",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4149-5314"
+    },
+    {
+      "area": "Sites",
+      "name": "Sites — Create site drawer",
+      "figmaNodeId": "4136:43843",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4136-43843"
+    },
+    {
+      "area": "Sites",
+      "name": "Site Detail — Company",
+      "figmaNodeId": "4138:7935",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4138-7935"
+    },
+    {
+      "area": "Snippets",
+      "name": "Snippets — empty",
+      "figmaNodeId": "4142:4999",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4142-4999"
+    },
+    {
+      "area": "Snippets",
+      "name": "Snippets — populated",
+      "figmaNodeId": "4148:5295",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4148-5295"
+    },
+    {
+      "area": "Snippets",
+      "name": "Snippets — Create snippet drawer",
+      "figmaNodeId": "4136:39145",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4136-39145"
+    },
+    {
+      "area": "Snippets",
+      "name": "Snippets — Configure snippet drawer",
+      "figmaNodeId": "4156:5567",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4156-5567"
+    },
+    {
+      "area": "Integrations",
+      "name": "Integrations — list",
+      "figmaNodeId": "4136:52252",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4136-52252"
+    },
+    {
+      "area": "Integrations",
+      "name": "Ablefy",
+      "figmaNodeId": "4136:59415",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4136-59415"
+    },
+    {
+      "area": "Integrations",
+      "name": "Facebook",
+      "figmaNodeId": "4164:7144",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4164-7144"
+    },
+    {
+      "area": "Integrations",
+      "name": "Cloudflare",
+      "figmaNodeId": "4164:10227",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4164-10227"
+    },
+    {
+      "area": "Integrations",
+      "name": "KlickTipp",
+      "figmaNodeId": "4164:13311",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4164-13311"
+    },
+    {
+      "area": "Integrations",
+      "name": "Digistore24",
+      "figmaNodeId": "4164:16395",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4164-16395"
+    },
+    {
+      "area": "Integrations",
+      "name": "Webinaris",
+      "figmaNodeId": "4164:19482",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4164-19482"
+    },
+    {
+      "area": "Integrations",
+      "name": "EverWebinar",
+      "figmaNodeId": "4164:22565",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4164-22565"
+    },
+    {
+      "area": "Integrations",
+      "name": "HubSpot",
+      "figmaNodeId": "4164:25650",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4164-25650"
+    },
+    {
+      "area": "Integrations",
+      "name": "Meta Ads",
+      "figmaNodeId": "4164:28737",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4164-28737"
+    },
+    {
+      "area": "Tools",
+      "name": "Reverse Proxy",
+      "figmaNodeId": "4171:10777",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4171-10777"
+    },
+    {
+      "area": "Tools",
+      "name": "Event Inspector",
+      "figmaNodeId": "4172:7946",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4172-7946"
+    },
+    {
+      "area": "Tools",
+      "name": "Live Feed",
+      "figmaNodeId": "4174:8210",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4174-8210"
+    },
+    {
+      "area": "Settings",
+      "name": "Settings — Billing",
+      "figmaNodeId": "4176:8507",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4176-8507"
+    }
+  ],
+  "components": [
+    {
+      "name": "Traqqr Sidenavbar",
+      "figmaNodeId": "4065:953",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4065-953",
+      "figmaPage": "Sidebar",
+      "code": "App component — build on shadcn <Sidebar> or a plain <aside>",
+      "uses": 23,
+      "screens": "All 23 screens",
+      "figmaProperties": []
+    },
+    {
+      "name": "Traqqr Top Bar",
+      "figmaNodeId": "4194:25781",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4194-25781",
+      "figmaPage": "Sidebar",
+      "code": "App component + shadcn Tooltip",
+      "uses": 23,
+      "screens": "All 23 screens",
+      "figmaProperties": [
+        "Greeting (text)",
+        "State: Default / Logout hover"
+      ]
+    },
+    {
+      "name": "App background",
+      "figmaNodeId": "4211:139",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4211-139",
+      "figmaPage": "Sidebar",
+      "code": "App component — CSS only (see section 5)",
+      "uses": 23,
+      "screens": "All 23 screens",
+      "figmaProperties": []
+    },
+    {
+      "name": "Integration Card",
+      "figmaNodeId": "4160:6394",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4160-6394",
+      "figmaPage": "Card",
+      "code": "Composed from shadcn Card (CardHeader, CardTitle, CardDescription, CardAction)",
+      "uses": 9,
+      "screens": "Integrations list",
+      "figmaProperties": [
+        "Logo (swap)",
+        "Chevron (boolean)"
+      ]
+    },
+    {
+      "name": "Card (shell)",
+      "figmaNodeId": "4194:25648",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4194-25648",
+      "figmaPage": "Card",
+      "code": "shadcn Card",
+      "uses": 0,
+      "screens": "Reference only",
+      "figmaProperties": [
+        "Style: Default / Translucent",
+        "Footer: No / Yes"
+      ]
+    },
+    {
+      "name": "Button",
+      "figmaNodeId": "1872:3230",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=1872-3230",
+      "figmaPage": "Button",
+      "code": "button",
+      "uses": 38,
+      "screens": "21 screens",
+      "figmaProperties": [
+        "Variant: Default / Outline / Secondary / Ghost / Destructive / Link",
+        "Size: xs / sm / default / lg",
+        "State: Default / Hover / Focus / Disabled",
+        "Roundness: Default / Rounded",
+        "Left icon · Right icon · Kbd (boolean)"
+      ]
+    },
+    {
+      "name": "Icon Button",
+      "figmaNodeId": "1892:615",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=1892-615",
+      "figmaPage": "Button",
+      "code": "button size=\"icon\"",
+      "uses": 32,
+      "screens": "All 23 screens",
+      "figmaProperties": [
+        "Icon (swap)",
+        "Variant",
+        "Size: xs / sm / default / lg",
+        "State",
+        "Roundness"
+      ]
+    },
+    {
+      "name": "Badge",
+      "figmaNodeId": "1868:495",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=1868-495",
+      "figmaPage": "Badge",
+      "code": "badge",
+      "uses": 37,
+      "screens": "16 screens",
+      "figmaProperties": [
+        "State: Default / Secondary / Destructive / Outline / Ghost / Success / Warning",
+        "Left icon · Right icon (boolean)"
+      ]
+    },
+    {
+      "name": "Card header",
+      "figmaNodeId": "1932:860",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=1932-860",
+      "figmaPage": "Card",
+      "code": "card → CardHeader / CardTitle / CardDescription / CardAction",
+      "uses": 40,
+      "screens": "20 screens",
+      "figmaProperties": [
+        "Type: Image / Button / Badge",
+        "Dir: None / LTR / RTL / Middle",
+        "Button · Badge · Icon (boolean)",
+        "Icon swap (swap)"
+      ]
+    },
+    {
+      "name": "Card footer",
+      "figmaNodeId": "1932:931",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=1932-931",
+      "figmaPage": "Card",
+      "code": "card → CardFooter",
+      "uses": 7,
+      "screens": "Site Detail, Event Inspector, Billing",
+      "figmaProperties": [
+        "Double button (boolean)",
+        "Footer text (boolean)"
+      ]
+    },
+    {
+      "name": "Table head",
+      "figmaNodeId": "1945:4070",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=1945-4070",
+      "figmaPage": "Table",
+      "code": "table → TableHead",
+      "uses": 34,
+      "screens": "6 screens",
+      "figmaProperties": [
+        "Checkbox · Button · Text (boolean)",
+        "Dir: LTR / RTL",
+        "State: Default / Hover"
+      ]
+    },
+    {
+      "name": "Table cell",
+      "figmaNodeId": "1945:4087",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=1945-4087",
+      "figmaPage": "Table",
+      "code": "table → TableCell",
+      "uses": 81,
+      "screens": "6 screens",
+      "figmaProperties": [
+        "Text · Badge · Button · Input · Checkbox · Icon (boolean)",
+        "Icon swap (swap)",
+        "Dir",
+        "State: Default / Hover"
+      ]
+    },
+    {
+      "name": "BreadcrumbItem",
+      "figmaNodeId": "1871:361",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=1871-361",
+      "figmaPage": "Breadcrumb",
+      "code": "breadcrumb → BreadcrumbItem / BreadcrumbLink / BreadcrumbPage",
+      "uses": 22,
+      "screens": "11 screens",
+      "figmaProperties": [
+        "Icon · BreadcrumbLink (boolean)",
+        "State: Default / Hover/Active",
+        "Dir"
+      ]
+    },
+    {
+      "name": "Breadcrumb separator",
+      "figmaNodeId": "2198:2610",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=2198-2610",
+      "figmaPage": "Breadcrumb",
+      "code": "breadcrumb → BreadcrumbSeparator",
+      "uses": 11,
+      "screens": "11 screens",
+      "figmaProperties": [
+        "Type: chevron-right / dot"
+      ]
+    },
+    {
+      "name": "FieldLabel",
+      "figmaNodeId": "1928:3999",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=1928-3999",
+      "figmaPage": "Input",
+      "code": "field → FieldLabel",
+      "uses": 17,
+      "screens": "6 screens",
+      "figmaProperties": [
+        "Asterisk · Badge · Action (boolean)",
+        "State: Default / Destructive / Disabled",
+        "Dir"
+      ]
+    },
+    {
+      "name": "FieldDescription",
+      "figmaNodeId": "1930:445",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=1930-445",
+      "figmaPage": "Input",
+      "code": "field → FieldDescription",
+      "uses": 12,
+      "screens": "6 screens",
+      "figmaProperties": [
+        "Alignment: Left / Right"
+      ]
+    },
+    {
+      "name": "Input",
+      "figmaNodeId": "1928:3990",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=1928-3990",
+      "figmaPage": "Input",
+      "code": "input (+ input-group for addons)",
+      "uses": 14,
+      "screens": "6 screens",
+      "figmaProperties": [
+        "State",
+        "Text: Placeholder / Active",
+        "Left icon · Right icon · Input group addon/control (boolean)",
+        "Roudness [sic]: Default / Rounded"
+      ]
+    },
+    {
+      "name": "Textarea",
+      "figmaNodeId": "1984:1854",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=1984-1854",
+      "figmaPage": "Textarea",
+      "code": "textarea",
+      "uses": 2,
+      "screens": "Sites drawer, Event Inspector",
+      "figmaProperties": [
+        "State: Default / Focus / Destructive / Disabled",
+        "Dir"
+      ]
+    },
+    {
+      "name": "NativeSelect",
+      "figmaNodeId": "2172:937",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=2172-937",
+      "figmaPage": "Native Select",
+      "code": "native-select",
+      "uses": 8,
+      "screens": "4 screens",
+      "figmaProperties": [
+        "State",
+        "Dir"
+      ]
+    },
+    {
+      "name": "Checkbox",
+      "figmaNodeId": "1939:2183",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=1939-2183",
+      "figmaPage": "Checkbox",
+      "code": "checkbox",
+      "uses": 1,
+      "screens": "Configure snippet drawer",
+      "figmaProperties": [
+        "Interaction",
+        "Data state: Checked / Unchecked / Invalid-…"
+      ]
+    },
+    {
+      "name": "Toggle",
+      "figmaNodeId": "1988:5238",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=1988-5238",
+      "figmaPage": "Toggle & Toggle Group",
+      "code": "toggle-group (type=\"single\" variant=\"outline\" size=\"sm\")",
+      "uses": 7,
+      "screens": "Integrations list, Dashboard",
+      "figmaProperties": [
+        "Variant: Outline / Ghost",
+        "Size: sm / default / large",
+        "State",
+        "Position: Single / Left / Middle / Right"
+      ]
+    },
+    {
+      "name": "Separator",
+      "figmaNodeId": "2056:1084",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=2056-1084",
+      "figmaPage": "Separator",
+      "code": "separator",
+      "uses": 6,
+      "screens": "Configure drawer, Billing",
+      "figmaProperties": [
+        "Direction"
+      ]
+    },
+    {
+      "name": "SheetHeader",
+      "figmaNodeId": "2055:1040",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=2055-1040",
+      "figmaPage": "Sheet",
+      "code": "sheet → SheetHeader / SheetTitle / SheetDescription",
+      "uses": 3,
+      "screens": "3 drawers",
+      "figmaProperties": [
+        "Icon (boolean)",
+        "Dir"
+      ]
+    },
+    {
+      "name": "SheetFooter",
+      "figmaNodeId": "2055:1051",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=2055-1051",
+      "figmaPage": "Sheet",
+      "code": "sheet → SheetFooter",
+      "uses": 3,
+      "screens": "3 drawers",
+      "figmaProperties": []
+    },
+    {
+      "name": "Item",
+      "figmaNodeId": "2118:8884",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=2118-8884",
+      "figmaPage": "Item",
+      "code": "item → Item / ItemMedia / ItemContent / ItemTitle / ItemDescription / ItemActions",
+      "uses": 5,
+      "screens": "Site Detail, Event Inspector",
+      "figmaProperties": [
+        "Title · Description (text)",
+        "Left icon / Left icon small / Number / Checkbox / Avatar / Image (media)",
+        "Kbd · Right icon · Button (boolean)",
+        "Type · State · Size · Dir"
+      ]
+    },
+    {
+      "name": "Empty",
+      "figmaNodeId": "4151:5594",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4151-5594",
+      "figmaPage": "Empty",
+      "code": "empty → Empty / EmptyMedia / EmptyTitle / EmptyDescription / EmptyContent",
+      "uses": 4,
+      "screens": "Sites, Sites drawer, Dashboard, Live Feed",
+      "figmaProperties": [
+        "Title · Description (text)",
+        "Icon (swap)",
+        "Button (boolean)"
+      ]
+    },
+    {
+      "name": "Kbd",
+      "figmaNodeId": "1986:1863",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=1986-1863",
+      "figmaPage": "Kbd",
+      "code": "kbd",
+      "uses": 2,
+      "screens": "Configure drawer, Event Inspector",
+      "figmaProperties": []
+    },
+    {
+      "name": "Alert",
+      "figmaNodeId": "1774:1994",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=1774-1994",
+      "figmaPage": "Alert",
+      "code": "alert",
+      "uses": 1,
+      "screens": "Live Feed",
+      "figmaProperties": [
+        "State: Default / Destructive",
+        "Button · Description · Icon (boolean)"
+      ]
+    },
+    {
+      "name": "SliderTrack + SliderRange",
+      "figmaNodeId": "2015:429",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=2015-429",
+      "figmaPage": "Slider",
+      "code": "progress (not slider)",
+      "uses": 2,
+      "screens": "Billing",
+      "figmaProperties": [
+        "Orientation"
+      ]
+    }
+  ],
+  "icons": [
+    {
+      "name": "lucide/chevron-right",
+      "figmaNodeId": "128:590",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=128-590",
+      "lucideReact": "ChevronRight",
+      "uses": 28
+    },
+    {
+      "name": "lucide/download",
+      "figmaNodeId": "128:960",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=128-960",
+      "lucideReact": "Download",
+      "uses": 2
+    },
+    {
+      "name": "lucide/log-out",
+      "figmaNodeId": "128:1644",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=128-1644",
+      "lucideReact": "LogOut",
+      "uses": 23
+    },
+    {
+      "name": "lucide/check",
+      "figmaNodeId": "128:576",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=128-576",
+      "lucideReact": "Check",
+      "uses": 12
+    },
+    {
+      "name": "lucide/x",
+      "figmaNodeId": "128:2934",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=128-2934",
+      "lucideReact": "X",
+      "uses": 8
+    },
+    {
+      "name": "lucide/chevron-down",
+      "figmaNodeId": "128:582",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=128-582",
+      "lucideReact": "ChevronDown",
+      "uses": 8
+    },
+    {
+      "name": "lucide/plus",
+      "figmaNodeId": "128:2064",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=128-2064",
+      "lucideReact": "Plus",
+      "uses": 6
+    },
+    {
+      "name": "lucide/search",
+      "figmaNodeId": "128:2282",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=128-2282",
+      "lucideReact": "Search",
+      "uses": 4
+    },
+    {
+      "name": "lucide/arrow-up-right",
+      "figmaNodeId": "128:198",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=128-198",
+      "lucideReact": "ArrowUpRight",
+      "uses": 4
+    },
+    {
+      "name": "lucide/globe",
+      "figmaNodeId": "128:1348",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=128-1348",
+      "lucideReact": "Globe",
+      "uses": 3
+    },
+    {
+      "name": "lucide/radio",
+      "figmaNodeId": "128:2114",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=128-2114",
+      "lucideReact": "Radio",
+      "uses": 3
+    },
+    {
+      "name": "lucide/shield",
+      "figmaNodeId": "128:2338",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=128-2338",
+      "lucideReact": "Shield",
+      "uses": 2
+    },
+    {
+      "name": "lucide/copy",
+      "figmaNodeId": "128:850",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=128-850",
+      "lucideReact": "Copy",
+      "uses": 2
+    },
+    {
+      "name": "lucide/file-text",
+      "figmaNodeId": "128:1124",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=128-1124",
+      "lucideReact": "FileText",
+      "uses": 2
+    },
+    {
+      "name": "lucide/pencil",
+      "figmaNodeId": "128:1994",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=128-1994",
+      "lucideReact": "Pencil",
+      "uses": 1
+    },
+    {
+      "name": "lucide/circle-alert",
+      "figmaNodeId": "128:618",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=128-618",
+      "lucideReact": "CircleAlert",
+      "uses": 1
+    },
+    {
+      "name": "lucide/code",
+      "figmaNodeId": "128:794",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=128-794",
+      "lucideReact": "Code",
+      "uses": 1
+    },
+    {
+      "name": "lucide/upload",
+      "figmaNodeId": "128:2806",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=128-2806",
+      "lucideReact": "Upload",
+      "uses": 1
+    },
+    {
+      "name": "lucide/wifi",
+      "figmaNodeId": "128:2918",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=128-2918",
+      "lucideReact": "Wifi",
+      "uses": 1
+    },
+    {
+      "name": "lucide/calendar",
+      "figmaNodeId": "128:528",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=128-528",
+      "lucideReact": "Calendar",
+      "uses": 1
+    },
+    {
+      "name": "lucide/credit-card",
+      "figmaNodeId": "128:876",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=128-876",
+      "lucideReact": "CreditCard",
+      "uses": 1
+    }
+  ],
+  "brandLogos": [
+    {
+      "name": "Brand / Facebook",
+      "figmaNodeId": "4003:39047",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4003-39047"
+    },
+    {
+      "name": "Brand / Cloudflare",
+      "figmaNodeId": "4003:39093",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4003-39093"
+    },
+    {
+      "name": "Brand / Ablefy",
+      "figmaNodeId": "4003:39099",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4003-39099"
+    },
+    {
+      "name": "Brand / KlickTipp",
+      "figmaNodeId": "4003:39106",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4003-39106"
+    },
+    {
+      "name": "Brand / Digistore24",
+      "figmaNodeId": "4003:39112",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4003-39112"
+    },
+    {
+      "name": "Brand / Webinaris",
+      "figmaNodeId": "4003:39121",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4003-39121"
+    },
+    {
+      "name": "Brand / EverWebinar",
+      "figmaNodeId": "4003:39126",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4003-39126"
+    },
+    {
+      "name": "Brand / HubSpot",
+      "figmaNodeId": "4003:39133",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4003-39133"
+    },
+    {
+      "name": "Brand / Meta Ads",
+      "figmaNodeId": "4003:39142",
+      "figmaUrl": "https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=4003-39142"
+    }
+  ]
+}
