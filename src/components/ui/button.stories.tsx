@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { ChevronRight, Loader2, Mail, X } from 'lucide-react'
+import { Kbd } from './kbd'
 import { Button } from './button'
 
 const meta = {
@@ -7,6 +8,10 @@ const meta = {
   component: Button,
   parameters: {
     layout: 'centered',
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/design/AuTDmsP70q09vix9pojWv0/Traqqr?node-id=1872-3230',
+    },
   },
   tags: ['autodocs'],
   argTypes: {
@@ -18,6 +23,10 @@ const meta = {
       control: 'select',
       options: ['default', 'xs', 'sm', 'lg', 'icon', 'icon-xs', 'icon-sm', 'icon-lg'],
     },
+    shape: {
+      control: 'select',
+      options: ['default', 'rounded'],
+    },
     disabled: { control: 'boolean' },
     asChild: { control: 'boolean' },
   },
@@ -25,6 +34,7 @@ const meta = {
     children: 'Button',
     variant: 'default',
     size: 'default',
+    shape: 'default',
     disabled: false,
   },
 } satisfies Meta<typeof Button>
@@ -119,17 +129,42 @@ export const IconButtonClose: Story = {
   ),
 }
 
+export const Roundness: Story = {
+  name: 'Roundness: Default / Rounded',
+  render: () => (
+    <div className="flex flex-wrap items-center gap-3">
+      <Button shape="default">Default (rounded-md)</Button>
+      <Button shape="rounded">Rounded (pill)</Button>
+      <Button shape="rounded" variant="outline">
+        Rounded outline
+      </Button>
+      <Button shape="rounded" size="icon" aria-label="Round icon button">
+        <ChevronRight />
+      </Button>
+    </div>
+  ),
+}
+
 export const AdvanceRoundButtons: Story = {
   name: 'Advance round buttons',
   render: () => (
     <div className="flex flex-wrap items-center gap-3">
-      <Button className="rounded-full">Rounded</Button>
-      <Button variant="outline" className="rounded-full">
+      <Button shape="rounded">Rounded</Button>
+      <Button shape="rounded" variant="outline">
         Rounded outline
       </Button>
-      <Button size="icon" className="rounded-full" aria-label="Round icon button">
+      <Button shape="rounded" size="icon" aria-label="Round icon button">
         <ChevronRight />
       </Button>
     </div>
+  ),
+}
+
+export const WithKbd: Story = {
+  name: 'With Kbd',
+  render: () => (
+    <Button variant="outline">
+      Save <Kbd>⌘S</Kbd>
+    </Button>
   ),
 }
