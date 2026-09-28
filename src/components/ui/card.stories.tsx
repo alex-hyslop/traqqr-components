@@ -7,6 +7,7 @@ import {
   CardDescription,
   CardFooter,
   CardHeader,
+  CardMedia,
   CardTitle,
 } from './card'
 import { Button } from './button'
@@ -91,15 +92,9 @@ export const IntegrationVariant: Story = {
   render: () => (
     <Card className="w-[347px] gap-4 p-6">
       <div className="flex w-full items-center justify-between">
-        <div
-          className="flex size-[58px] items-center justify-center rounded-2xl border p-1"
-          style={{
-            backgroundImage:
-              'linear-gradient(-58deg, rgba(56,189,248,0.1) 20%, rgba(255,171,64,0.42) 86%)',
-          }}
-        >
+        <CardMedia>
           <div className="size-12 rounded-lg bg-muted" />
-        </div>
+        </CardMedia>
         <CardAction className="static row-span-1 flex items-center gap-2 self-center">
           <Badge variant="outline">Outline</Badge>
           <ChevronRight className="size-4 text-muted-foreground" />
@@ -110,5 +105,30 @@ export const IntegrationVariant: Story = {
         <CardDescription>Server-side event forwarding via Conversions API</CardDescription>
       </CardHeader>
     </Card>
+  ),
+}
+
+export const Media: Story = {
+  name: 'Card media',
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Gradient logo tile. Override `--card-media-from`, `--card-media-to` and `--card-media-border` (or `--card-media-background` with any background-image, e.g. another gradient, to replace it entirely) on any ancestor.',
+      },
+    },
+  },
+  render: () => (
+    <div className="flex items-center gap-4">
+      <CardMedia>
+        <div className="size-12 rounded-lg bg-muted" />
+      </CardMedia>
+      <CardMedia className="[--card-media-from:rgb(74_222_128/0.15)] [--card-media-to:rgb(56_189_248/0.4)]">
+        <div className="size-12 rounded-lg bg-muted" />
+      </CardMedia>
+      <CardMedia className="[--card-media-background:linear-gradient(var(--muted),var(--muted))] [--card-media-border:var(--border)]">
+        <div className="size-12 rounded-lg bg-background" />
+      </CardMedia>
+    </div>
   ),
 }

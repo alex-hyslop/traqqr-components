@@ -32,6 +32,19 @@ function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
   )
 }
 
+function CardMedia({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-media"
+      className={cn(
+        "flex w-fit shrink-0 items-center justify-center overflow-hidden rounded-xl border border-(--card-media-border) p-1 [background-image:var(--card-media-background,linear-gradient(-57.65deg,var(--card-media-from)_20.1%,var(--card-media-to)_85.78%))] [&>img:not([class*='size-'])]:size-12 [&>svg:not([class*='size-'])]:size-12",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
 function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
@@ -94,6 +107,7 @@ function CardFooter({ className, ...props }: React.ComponentProps<"div">) {
 export {
   Card,
   CardHeader,
+  CardMedia,
   CardFooter,
   CardTitle,
   CardAction,

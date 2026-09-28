@@ -81,6 +81,10 @@
     --ring: #a8a29e;
     --radius: 0.625rem;
 
+    --card-media-from: rgb(56 189 248 / 0.1);
+    --card-media-to: rgb(255 171 64 / 0.42);
+    --card-media-border: #3d372e;
+
     --sidebar: #fafaf9;
     --sidebar-border: #e7e5e4;
 }
