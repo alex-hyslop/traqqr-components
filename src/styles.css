@@ -72,8 +72,8 @@
     --destructive-subtle: #e7000b1a;
     --success-subtle: #16a34a1a;
     --text-success: #15803d;
-    --warning-subtle: #ffab4033;
-    --text-warning: #ffbf66;
+    --warning-subtle: #d977061a;
+    --text-warning: #b45309;
     --brand: #ffb74d;
     --foreground-subtle: #0c0a090f;
     --border: #e7e5e4;
@@ -111,6 +111,8 @@
     --destructive-subtle: #ff7f6e33;
     --success-subtle: #4ade8033;
     --text-success: #4ade80;
+    --warning-subtle: #fbbf2433;
+    --text-warning: #fbbf24;
     --brand: #ffb74d;
     --foreground-subtle: #ffffff0f;
     --border: #ffffff1a;

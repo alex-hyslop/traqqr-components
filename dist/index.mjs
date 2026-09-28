@@ -7,10 +7,12 @@ import { jsx, jsxs } from "react/jsx-runtime";
 import { Checkbox as Checkbox$1, Dialog, Label as Label$1, Progress as Progress$1, Separator as Separator$1, Slot, Toggle as Toggle$1, ToggleGroup as ToggleGroup$1, Tooltip as Tooltip$1 } from "radix-ui";
 import { CheckIcon, ChevronDownIcon, ChevronRightIcon, MoreHorizontalIcon, XIcon } from "lucide-react";
 //#region src/components/ui/alert.tsx
-const alertVariants = cva("group/alert relative grid w-full gap-0.5 rounded-lg border px-2.5 py-2 text-left text-sm has-data-[slot=alert-action]:relative has-data-[slot=alert-action]:pr-18 has-[>svg]:grid-cols-[auto_1fr] has-[>svg]:gap-x-2 *:[svg]:row-span-2 *:[svg]:translate-y-0.5 *:[svg]:text-current *:[svg:not([class*='size-'])]:size-4", {
+const alertVariants = cva("group/alert relative grid w-full gap-x-2 gap-y-0.5 rounded-lg border px-2.5 py-2 text-left text-sm has-[>svg]:grid-cols-[auto_1fr] has-data-[slot=alert-action]:grid-cols-[1fr_auto] has-[>svg]:has-data-[slot=alert-action]:grid-cols-[auto_1fr_auto] *:[svg]:row-span-2 *:[svg]:translate-y-0.5 *:[svg]:text-current *:[svg:not([class*='size-'])]:size-4", {
 	variants: { variant: {
 		default: "bg-card text-card-foreground",
-		destructive: "bg-card text-destructive *:data-[slot=alert-description]:text-destructive/90 *:[svg]:text-current"
+		destructive: "bg-card text-destructive",
+		success: "bg-card text-success-text",
+		warning: "bg-card text-warning-text"
 	} },
 	defaultVariants: { variant: "default" }
 });
@@ -25,21 +27,21 @@ function Alert({ className, variant, ...props }) {
 function AlertTitle({ className, ...props }) {
 	return /* @__PURE__ */ jsx("div", {
 		"data-slot": "alert-title",
-		className: cn("font-medium group-has-[>svg]/alert:col-start-2 [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-foreground", className),
+		className: cn("font-normal group-has-[>svg]/alert:col-start-2 [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-foreground", className),
 		...props
 	});
 }
 function AlertDescription({ className, ...props }) {
 	return /* @__PURE__ */ jsx("div", {
 		"data-slot": "alert-description",
-		className: cn("text-sm text-balance text-muted-foreground md:text-pretty [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-foreground [&_p:not(:last-child)]:mb-4", className),
+		className: cn("text-sm group-has-[>svg]/alert:col-start-2 [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-foreground [&_p:not(:last-child)]:mb-4", className),
 		...props
 	});
 }
 function AlertAction({ className, ...props }) {
 	return /* @__PURE__ */ jsx("div", {
 		"data-slot": "alert-action",
-		className: cn("absolute top-1/2 right-2 -translate-y-1/2", className),
+		className: cn("col-start-2 row-span-2 row-start-1 self-center group-has-[>svg]/alert:col-start-3", className),
 		...props
 	});
 }
@@ -140,7 +142,7 @@ const buttonVariants = cva("group/button inline-flex shrink-0 items-center justi
 		},
 		variant: {
 			default: "bg-primary text-primary-foreground hover:opacity-80",
-			outline: "border-border bg-background hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
+			outline: "border-border bg-background text-foreground hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
 			secondary: "bg-secondary text-secondary-foreground hover:opacity-80 aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
 			ghost: "hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50",
 			destructive: "bg-destructive/10 text-destructive hover:opacity-80 focus-visible:border-destructive-subtle focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:focus-visible:ring-destructive/40",
