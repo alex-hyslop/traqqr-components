@@ -1,3 +1,4 @@
+"use client"
 import * as React$1 from "react";
 import { VariantProps } from "class-variance-authority";
 import { Checkbox as Checkbox$1, Dialog, Label as Label$1, Progress as Progress$1, Separator as Separator$1, Toggle as Toggle$1, ToggleGroup as ToggleGroup$1, Tooltip as Tooltip$1 } from "radix-ui";
@@ -27,7 +28,7 @@ declare function AlertAction({
 //#endregion
 //#region src/components/ui/badge.d.ts
 declare const badgeVariants: (props?: ({
-  variant?: "default" | "destructive" | "secondary" | "outline" | "ghost" | "link" | "success" | "warning" | null | undefined;
+  variant?: "default" | "secondary" | "destructive" | "outline" | "ghost" | "link" | "success" | "warning" | null | undefined;
 } & _$class_variance_authority_types0.ClassProp) | undefined) => string;
 declare function Badge({
   className,
@@ -75,7 +76,7 @@ declare function BreadcrumbEllipsis({
 //#region src/components/ui/button.d.ts
 declare const buttonVariants: (props?: ({
   shape?: "default" | "rounded" | null | undefined;
-  variant?: "default" | "destructive" | "secondary" | "outline" | "ghost" | "link" | null | undefined;
+  variant?: "default" | "secondary" | "destructive" | "outline" | "ghost" | "link" | null | undefined;
   size?: "default" | "xs" | "sm" | "lg" | "icon" | "icon-xs" | "icon-sm" | "icon-lg" | null | undefined;
 } & _$class_variance_authority_types0.ClassProp) | undefined) => string;
 declare function Button({
