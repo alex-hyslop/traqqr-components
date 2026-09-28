@@ -9,11 +9,29 @@ import {
 
 const meta = {
   title: 'ui/Avatar',
+  component: Avatar,
   parameters: { layout: 'centered' },
-} satisfies Meta
+  tags: ['autodocs'],
+  argTypes: {
+    size: {
+      control: 'select',
+      options: ['default', 'sm', 'lg'],
+    },
+  },
+  args: { size: 'default' },
+} satisfies Meta<typeof Avatar>
 
 export default meta
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Avatar {...args}>
+      <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+      <AvatarFallback>CN</AvatarFallback>
+    </Avatar>
+  ),
+}
 
 export const Default: Story = {
   render: () => (

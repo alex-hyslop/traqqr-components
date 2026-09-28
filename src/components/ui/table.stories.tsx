@@ -18,8 +18,10 @@ const invoices = [
 
 const meta = {
   title: 'ui/Table',
+  component: Table,
   parameters: { layout: 'padded' },
-} satisfies Meta
+  tags: ['autodocs'],
+} satisfies Meta<typeof Table>
 
 export default meta
 type Story = StoryObj<typeof meta>

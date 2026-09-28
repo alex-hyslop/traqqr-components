@@ -14,11 +14,42 @@ import { Badge } from './badge'
 
 const meta = {
   title: 'ui/Card',
+  component: Card,
   parameters: { layout: 'centered' },
-} satisfies Meta
+  tags: ['autodocs'],
+  argTypes: {
+    size: {
+      control: 'select',
+      options: ['default', 'sm'],
+    },
+  },
+  args: { size: 'default' },
+} satisfies Meta<typeof Card>
 
 export default meta
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Card {...args} className="w-[368px]">
+      <CardHeader>
+        <CardTitle>Login to your account</CardTitle>
+        <CardDescription>
+          Enter your email below to login to your account
+        </CardDescription>
+        <CardAction>
+          <Button variant="link">Sign up</Button>
+        </CardAction>
+      </CardHeader>
+      <CardContent>
+        <p className="text-sm text-muted-foreground">Card content goes here.</p>
+      </CardContent>
+      <CardFooter>
+        <Button className="w-full">Login</Button>
+      </CardFooter>
+    </Card>
+  ),
+}
 
 export const Default: Story = {
   render: () => (

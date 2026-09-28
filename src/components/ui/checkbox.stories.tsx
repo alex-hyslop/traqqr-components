@@ -7,10 +7,18 @@ const meta = {
   parameters: {
     layout: 'centered',
   },
+  tags: ['autodocs'],
+  argTypes: {
+    defaultChecked: { control: 'boolean' },
+    disabled: { control: 'boolean' },
+    'aria-invalid': { control: 'boolean' },
+  },
 } satisfies Meta<typeof Checkbox>
 
 export default meta
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {}
 
 export const Unchecked: Story = {}
 

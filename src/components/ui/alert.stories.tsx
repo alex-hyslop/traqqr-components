@@ -5,13 +5,32 @@ import { Button } from './button'
 
 const meta = {
   title: 'ui/Alert',
+  component: Alert,
   parameters: {
     layout: 'padded',
   },
-} satisfies Meta
+  tags: ['autodocs'],
+  argTypes: {
+    variant: {
+      control: 'select',
+      options: ['default', 'destructive'],
+    },
+  },
+  args: { variant: 'default' },
+} satisfies Meta<typeof Alert>
 
 export default meta
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Alert {...args}>
+      <CircleAlert />
+      <AlertTitle>New events detected</AlertTitle>
+      <AlertDescription>Live Feed found new events matching your filters.</AlertDescription>
+    </Alert>
+  ),
+}
 
 export const Default: Story = {
   render: () => (

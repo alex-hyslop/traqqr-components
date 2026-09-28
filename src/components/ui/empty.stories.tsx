@@ -12,10 +12,12 @@ import { Button } from './button'
 
 const meta = {
   title: 'ui/Empty',
+  component: Empty,
   parameters: {
     layout: 'padded',
   },
-} satisfies Meta
+  tags: ['autodocs'],
+} satisfies Meta<typeof Empty>
 
 export default meta
 type Story = StoryObj<typeof meta>

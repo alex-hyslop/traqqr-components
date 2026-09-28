@@ -10,8 +10,10 @@ import {
 
 const meta = {
   title: 'ui/Breadcrumb',
+  component: Breadcrumb,
   parameters: { layout: 'padded' },
-} satisfies Meta
+  tags: ['autodocs'],
+} satisfies Meta<typeof Breadcrumb>
 
 export default meta
 type Story = StoryObj<typeof meta>
