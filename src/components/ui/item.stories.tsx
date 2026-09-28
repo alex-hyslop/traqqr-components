@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import { BadgeCheck } from 'lucide-react'
 import { Kbd } from './kbd'
 import {
   Item,
@@ -13,13 +14,50 @@ import { Button } from './button'
 
 const meta = {
   title: 'ui/Item',
+  component: Item,
   parameters: {
     layout: 'padded',
   },
-} satisfies Meta
+  tags: ['autodocs'],
+  argTypes: {
+    variant: {
+      control: 'select',
+      options: ['default', 'outline', 'muted'],
+    },
+    size: {
+      control: 'select',
+      options: ['default', 'sm', 'xs'],
+    },
+  },
+  args: {
+    variant: 'default',
+    size: 'default',
+  },
+} satisfies Meta<typeof Item>
 
 export default meta
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <div className="max-w-md">
+      <Item {...args}>
+        <ItemMedia variant="icon">
+          <BadgeCheck />
+        </ItemMedia>
+        <ItemContent>
+          <ItemTitle>Item title</ItemTitle>
+          <ItemDescription>Item description</ItemDescription>
+        </ItemContent>
+        <ItemActions>
+          <Button size="sm" variant="outline">
+            Action
+          </Button>
+        </ItemActions>
+      </Item>
+    </div>
+  ),
+}
 
 export const StepList: Story = {
   name: 'Step list (Number media + Kbd)',
