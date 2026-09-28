@@ -25,6 +25,8 @@ const meta = {
     },
     disabled: { control: 'boolean' },
     asChild: { control: 'boolean' },
+    leftIcon: { control: 'boolean' },
+    rightIcon: { control: 'boolean' },
   },
   args: {
     children: 'Button',
@@ -32,13 +34,23 @@ const meta = {
     size: 'default',
     shape: 'default',
     disabled: false,
+    leftIcon: false,
+    rightIcon: false,
   },
-} satisfies Meta<typeof Button>
+} satisfies Meta<typeof Button & { leftIcon: boolean; rightIcon: boolean }>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Playground: Story = {}
+export const Playground: Story = {
+  render: ({ leftIcon, rightIcon, ...args }) => (
+    <Button {...args}>
+      {leftIcon && <Mail data-icon="inline-start" />}
+      {args.children}
+      {rightIcon && <ChevronRight data-icon="inline-end" />}
+    </Button>
+  ),
+}
 
 export const Variants: Story = {
   render: () => (
