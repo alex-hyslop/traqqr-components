@@ -11,7 +11,6 @@ import {
 } from './card'
 import { Button } from './button'
 import { Badge } from './badge'
-import { Avatar, AvatarFallback } from './avatar'
 
 const meta = {
   title: 'ui/Card',
@@ -79,39 +78,6 @@ export const IntegrationVariant: Story = {
         <CardTitle>Facebook</CardTitle>
         <CardDescription>Server-side event forwarding via Conversions API</CardDescription>
       </CardHeader>
-    </Card>
-  ),
-}
-
-export const TestimonialVariant: Story = {
-  name: 'Testimonial card',
-  render: () => (
-    <Card className="w-[368px]">
-      <CardContent>
-        <p className="text-sm text-muted-foreground">
-          &ldquo;Traqqr cut our setup time from days to minutes.&rdquo;
-        </p>
-      </CardContent>
-      <CardFooter className="flex items-center gap-3 border-t-0 bg-transparent pt-0">
-        <Avatar size="sm">
-          <AvatarFallback>AH</AvatarFallback>
-        </Avatar>
-        <div className="flex flex-col">
-          <CardTitle className="text-sm">Alex Hyslop</CardTitle>
-          <CardDescription>Head of Growth</CardDescription>
-        </div>
-      </CardFooter>
-    </Card>
-  ),
-}
-
-export const CtaVariant: Story = {
-  name: 'CTA card',
-  render: () => (
-    <Card className="w-[368px] items-center gap-4 p-10 text-center">
-      <CardTitle>Connect your Facebook account</CardTitle>
-      <CardDescription>Start forwarding events with one click.</CardDescription>
-      <Button shape="rounded">Connect</Button>
     </Card>
   ),
 }
