@@ -12,7 +12,7 @@ import {
 import { Button } from './button'
 
 const meta = {
-  title: 'ui/Sheet',
+  title: 'Molecules/Sheet',
   component: Sheet,
   parameters: {
     layout: 'padded',

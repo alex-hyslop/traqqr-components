@@ -13,7 +13,7 @@ import { Button } from './button'
 import { Badge } from './badge'
 
 const meta = {
-  title: 'ui/Card',
+  title: 'Molecules/Card',
   component: Card,
   parameters: { layout: 'centered' },
   tags: ['autodocs'],

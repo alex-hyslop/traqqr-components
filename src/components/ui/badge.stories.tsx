@@ -1,47 +1,48 @@
+import type { ComponentProps } from 'react'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Check, ChevronRight } from 'lucide-react'
 import { Badge } from './badge'
 
-const meta = {
-  title: 'ui/Badge',
+const VARIANTS = ['default', 'secondary', 'destructive', 'outline', 'ghost', 'success', 'warning'] as const
+
+type BadgeStoryArgs = ComponentProps<typeof Badge> & { leftIcon?: boolean; rightIcon?: boolean }
+
+const meta: Meta<BadgeStoryArgs> = {
+  title: 'Atoms/Badge',
   component: Badge,
-  parameters: {
-    layout: 'centered',
-  },
+  parameters: { layout: 'centered' },
   tags: ['autodocs'],
   argTypes: {
-    variant: {
-      control: 'select',
-      options: [
-        'default',
-        'secondary',
-        'destructive',
-        'outline',
-        'ghost',
-        'success',
-        'warning',
-      ],
-    },
+    variant: { control: 'select', options: VARIANTS },
+    asChild: { control: false },
+    leftIcon: { control: 'boolean' },
+    rightIcon: { control: 'boolean' },
   },
-  args: { children: 'Badge', variant: 'default' },
-} satisfies Meta<typeof Badge>
+  args: { children: 'Badge', variant: 'default', leftIcon: false, rightIcon: false },
+}
 
 export default meta
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<BadgeStoryArgs>
 
-export const Playground: Story = {}
+export const Playground: Story = {
+  render: ({ leftIcon, rightIcon, children, ...args }) => (
+    <Badge {...args}>
+      {leftIcon && <Check data-icon="inline-start" />}
+      {children}
+      {rightIcon && <ChevronRight data-icon="inline-end" />}
+    </Badge>
+  ),
+}
 
 export const AllVariants: Story = {
   name: 'State: Default / Secondary / Destructive / Outline / Ghost / Success / Warning',
   render: () => (
     <div className="flex flex-wrap items-center gap-3">
-      <Badge variant="default">Default</Badge>
-      <Badge variant="secondary">Secondary</Badge>
-      <Badge variant="destructive">Destructive</Badge>
-      <Badge variant="outline">Outline</Badge>
-      <Badge variant="ghost">Ghost</Badge>
-      <Badge variant="success">Success</Badge>
-      <Badge variant="warning">Warning</Badge>
+      {VARIANTS.map((variant) => (
+        <Badge key={variant} variant={variant} className="capitalize">
+          {variant}
+        </Badge>
+      ))}
     </div>
   ),
 }
@@ -50,12 +51,16 @@ export const WithIcons: Story = {
   name: 'Left icon / Right icon',
   render: () => (
     <div className="flex flex-wrap items-center gap-3">
-      <Badge variant="success">
-        <Check data-icon="inline-start" /> Active
-      </Badge>
-      <Badge variant="outline">
-        Details <ChevronRight data-icon="inline-end" />
-      </Badge>
+      {VARIANTS.slice(0, 5).map((variant) => (
+        <div key={variant} className="flex gap-2">
+          <Badge variant={variant}>
+            <Check data-icon="inline-start" /> Badge
+          </Badge>
+          <Badge variant={variant}>
+            Badge <ChevronRight data-icon="inline-end" />
+          </Badge>
+        </div>
+      ))}
     </div>
   ),
 }

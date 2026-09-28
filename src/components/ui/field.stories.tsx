@@ -3,7 +3,7 @@ import { Field, FieldDescription, FieldError, FieldLabel } from './field'
 import { Input } from './input'
 
 const meta = {
-  title: 'ui/Field',
+  title: 'Molecules/Field',
   component: Field,
   parameters: {
     layout: 'padded',

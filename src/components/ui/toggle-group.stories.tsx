@@ -3,7 +3,7 @@ import { Filter } from 'lucide-react'
 import { ToggleGroup, ToggleGroupItem } from './toggle-group'
 
 const meta = {
-  title: 'ui/ToggleGroup',
+  title: 'Molecules/ToggleGroup',
   component: ToggleGroup,
   parameters: {
     layout: 'padded',

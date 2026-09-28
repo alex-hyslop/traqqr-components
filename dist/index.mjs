@@ -44,7 +44,7 @@ function AlertAction({ className, ...props }) {
 }
 //#endregion
 //#region src/components/ui/badge.tsx
-const badgeVariants = cva("group/badge inline-flex h-[22px] w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-4xl border border-transparent px-2 py-[7px] text-xs font-medium whitespace-nowrap transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&>svg]:pointer-events-none [&>svg]:size-3! [text-box:trim-both_cap_alphabetic]", {
+const badgeVariants = cva("group/badge inline-flex h-[22px] w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-4xl border border-transparent px-2 py-[7px] text-xs font-normal whitespace-nowrap transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&>svg]:pointer-events-none [&>svg]:size-3! [text-box:trim-both_cap_alphabetic]", {
 	variants: { variant: {
 		default: "bg-primary text-primary-foreground [a]:hover:bg-primary/80",
 		secondary: "bg-secondary text-secondary-foreground [a]:hover:bg-secondary/80",
@@ -52,8 +52,8 @@ const badgeVariants = cva("group/badge inline-flex h-[22px] w-fit shrink-0 items
 		outline: "border-border text-foreground [a]:hover:bg-muted [a]:hover:text-muted-foreground",
 		ghost: "hover:bg-muted hover:text-muted-foreground dark:hover:bg-muted/50",
 		link: "text-primary underline-offset-4 hover:underline",
-		success: "bg-success/10 text-success focus-visible:ring-success/20 dark:bg-success/20 dark:focus-visible:ring-success/40 [a]:hover:bg-success/20",
-		warning: "bg-warning/10 text-warning focus-visible:ring-warning/20 dark:bg-warning/20 dark:focus-visible:ring-warning/40 [a]:hover:bg-warning/20"
+		success: "bg-success-subtle text-success-text focus-visible:ring-success/20 dark:focus-visible:ring-success/40 [a]:hover:bg-success/20",
+		warning: "bg-warning-subtle text-warning-text focus-visible:ring-warning/20 dark:focus-visible:ring-warning/40 [a]:hover:bg-warning/20"
 	} },
 	defaultVariants: { variant: "default" }
 });
@@ -131,29 +131,29 @@ function BreadcrumbEllipsis({ className, ...props }) {
 }
 //#endregion
 //#region src/components/ui/button.tsx
-const buttonVariants = cva("group/button inline-flex shrink-0 items-center justify-center border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 [text-box:trim-both_cap_alphabetic]", {
+const buttonVariants = cva("group/button inline-flex shrink-0 items-center justify-center border border-transparent bg-clip-padding text-sm font-normal whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 [text-box:trim-both_cap_alphabetic]", {
 	variants: {
 		shape: {
-			default: "rounded-md",
+			default: "",
 			rounded: "rounded-full"
 		},
 		variant: {
-			default: "bg-primary text-primary-foreground hover:bg-primary/80",
+			default: "bg-primary text-primary-foreground hover:opacity-80",
 			outline: "border-border bg-background hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
-			secondary: "bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_5%)] aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
+			secondary: "bg-secondary text-secondary-foreground hover:opacity-80 aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
 			ghost: "hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50",
-			destructive: "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
-			link: "text-primary underline-offset-4 hover:underline"
+			destructive: "bg-destructive/10 text-destructive hover:opacity-80 focus-visible:border-destructive-subtle focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:focus-visible:ring-destructive/40",
+			link: "text-foreground underline underline-offset-4"
 		},
 		size: {
-			default: "h-8 gap-1.5 px-2.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2",
-			xs: "h-6 gap-1 rounded-[min(var(--radius-md),10px)] px-2 text-xs in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3",
-			sm: "h-7 gap-1 rounded-[min(var(--radius-md),12px)] px-2.5 text-[0.8rem] in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3.5",
-			lg: "h-9 gap-1.5 px-2.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2",
-			icon: "size-8",
-			"icon-xs": "size-6 rounded-[min(var(--radius-md),10px)] in-data-[slot=button-group]:rounded-lg [&_svg:not([class*='size-'])]:size-3",
-			"icon-sm": "size-7 rounded-[min(var(--radius-md),12px)] in-data-[slot=button-group]:rounded-lg",
-			"icon-lg": "size-9"
+			default: "h-8 gap-1 rounded-lg px-4",
+			xs: "h-6 gap-1 rounded-sm px-2 text-xs [&_svg:not([class*='size-'])]:size-3",
+			sm: "h-7 gap-1 rounded-sm px-3 text-xs",
+			lg: "h-9 gap-1 rounded-lg px-6",
+			icon: "size-8 rounded-lg",
+			"icon-xs": "size-6 rounded-sm [&_svg:not([class*='size-'])]:size-3",
+			"icon-sm": "size-7 rounded-sm",
+			"icon-lg": "size-9 rounded-lg"
 		}
 	},
 	compoundVariants: [{
@@ -248,7 +248,7 @@ function CardFooter({ className, ...props }) {
 function Checkbox({ className, ...props }) {
 	return /* @__PURE__ */ jsx(Checkbox$1.Root, {
 		"data-slot": "checkbox",
-		className: cn("peer relative flex size-4 shrink-0 items-center justify-center rounded-[4px] border border-input transition-colors outline-none group-has-disabled/field:opacity-50 group-has-[:focus-visible]/field-label:ring-0 group-has-[:focus-visible]/field-label:not-data-checked:border-input after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 aria-invalid:aria-checked:border-primary dark:bg-input/30 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 data-checked:border-primary data-checked:bg-primary data-checked:text-primary-foreground group-has-[:focus-visible]/field-label:data-checked:border-primary dark:data-checked:bg-primary", className),
+		className: cn("peer relative flex size-4 shrink-0 items-center justify-center rounded-[4px] border border-border bg-background transition-colors outline-none group-has-disabled/field:opacity-50 group-has-[:focus-visible]/field-label:ring-0 group-has-[:focus-visible]/field-label:not-data-checked:border-border after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 aria-invalid:aria-checked:border-primary dark:aria-invalid:ring-destructive/40 data-checked:border-primary data-checked:bg-primary data-checked:text-primary-foreground group-has-[:focus-visible]/field-label:data-checked:border-primary dark:data-checked:bg-primary disabled:aria-invalid:data-checked:border-transparent disabled:aria-invalid:data-checked:bg-destructive-subtle disabled:aria-invalid:data-checked:text-destructive disabled:aria-invalid:data-checked:ring-0 disabled:aria-invalid:data-checked:opacity-100", className),
 		...props,
 		children: /* @__PURE__ */ jsx(Checkbox$1.Indicator, {
 			"data-slot": "checkbox-indicator",
@@ -383,7 +383,7 @@ function FieldContent({ className, ...props }) {
 function FieldLabel({ className, ...props }) {
 	return /* @__PURE__ */ jsx(Label, {
 		"data-slot": "field-label",
-		className: cn("group/field-label peer/field-label flex w-fit gap-2 leading-snug group-data-[disabled=true]/field:opacity-50 has-data-checked:border-primary/30 has-data-checked:bg-primary/5 has-[>[data-slot=field]]:rounded-lg has-[>[data-slot=field]]:border has-[>[data-slot=field]]:not-has-[:disabled,[data-disabled]]:hover:bg-muted/50 has-[>[data-slot=field]]:has-[:focus-visible]:border-ring has-[>[data-slot=field]]:has-[:focus-visible]:ring-3 has-[>[data-slot=field]]:has-[:focus-visible]:ring-ring/50 *:data-[slot=field]:p-2.5 dark:has-data-checked:border-primary/20 dark:has-data-checked:bg-primary/10", "has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col", className),
+		className: cn("group/field-label peer/field-label flex w-fit gap-2 leading-5 font-normal group-data-[disabled=true]/field:opacity-50 *:data-[slot=field-label-asterisk]:text-destructive *:data-[slot=field-label-action]:ml-auto *:data-[slot=field-label-action]:text-foreground has-data-[slot=field-label-action]:w-full has-data-checked:border-primary/30 has-data-checked:bg-primary/5 has-[>[data-slot=field]]:rounded-lg has-[>[data-slot=field]]:border has-[>[data-slot=field]]:not-has-[:disabled,[data-disabled]]:hover:bg-muted/50 has-[>[data-slot=field]]:has-[:focus-visible]:border-ring has-[>[data-slot=field]]:has-[:focus-visible]:ring-3 has-[>[data-slot=field]]:has-[:focus-visible]:ring-ring/50 *:data-[slot=field]:p-2.5 dark:has-data-checked:border-primary/20 dark:has-data-checked:bg-primary/10", "has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col", className),
 		...props
 	});
 }
@@ -394,10 +394,11 @@ function FieldTitle({ className, ...props }) {
 		...props
 	});
 }
-function FieldDescription({ className, ...props }) {
+function FieldDescription({ className, align = "left", ...props }) {
 	return /* @__PURE__ */ jsx("p", {
 		"data-slot": "field-description",
-		className: cn("text-left text-sm leading-normal font-normal text-muted-foreground group-has-data-horizontal/field:text-balance [[data-variant=legend]+&]:-mt-1.5", "last:mt-0 nth-last-2:-mt-1", "[&>a]:underline [&>a]:underline-offset-4 [&>a:hover]:text-primary", className),
+		"data-align": align,
+		className: cn("text-left text-sm leading-5 font-normal data-[align=right]:text-right text-muted-foreground group-has-data-horizontal/field:text-balance [[data-variant=legend]+&]:-mt-1.5", "last:mt-0 nth-last-2:-mt-1", "[&>a]:underline [&>a]:underline-offset-4 [&>a:hover]:text-primary", className),
 		...props
 	});
 }
@@ -436,11 +437,98 @@ function FieldError({ className, children, errors, ...props }) {
 }
 //#endregion
 //#region src/components/ui/input.tsx
-function Input({ className, type, ...props }) {
+const inputVariants = cva("h-8 w-full min-w-0 border border-border bg-background px-2.5 py-1 text-base transition-colors outline-none file:inline-flex file:h-6 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:bg-input/50 disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 md:text-sm dark:disabled:bg-input/80 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40", {
+	variants: { shape: {
+		default: "rounded-lg",
+		rounded: "rounded-full"
+	} },
+	defaultVariants: { shape: "default" }
+});
+function Input({ className, type, shape = "default", ...props }) {
 	return /* @__PURE__ */ jsx("input", {
 		type,
 		"data-slot": "input",
-		className: cn("h-8 w-full min-w-0 rounded-lg border border-input bg-transparent px-2.5 py-1 text-base transition-colors outline-none file:inline-flex file:h-6 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:bg-input/50 disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 md:text-sm dark:bg-input/30 dark:disabled:bg-input/80 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40", className),
+		"data-shape": shape,
+		className: cn(inputVariants({ shape }), className),
+		...props
+	});
+}
+//#endregion
+//#region src/components/ui/textarea.tsx
+function Textarea({ className, ...props }) {
+	return /* @__PURE__ */ jsx("textarea", {
+		"data-slot": "textarea",
+		className: cn("flex field-sizing-content min-h-16 w-full rounded-lg border border-border bg-background px-2.5 py-2 text-base transition-colors outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:bg-muted/50 disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 md:text-sm dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40", className),
+		...props
+	});
+}
+//#endregion
+//#region src/components/ui/input-group.tsx
+function InputGroup({ className, ...props }) {
+	return /* @__PURE__ */ jsx("div", {
+		"data-slot": "input-group",
+		role: "group",
+		className: cn("group/input-group relative flex h-8 w-full min-w-0 items-center rounded-lg border border-border bg-background transition-colors outline-none in-data-[slot=combobox-content]:focus-within:border-inherit in-data-[slot=combobox-content]:focus-within:ring-0 has-disabled:opacity-50 has-[[data-slot=input-group-control]:focus-visible]:border-ring has-[[data-slot=input-group-control]:focus-visible]:ring-3 has-[[data-slot=input-group-control]:focus-visible]:ring-ring/50 has-[[data-slot][aria-invalid=true]]:border-destructive has-[[data-slot][aria-invalid=true]]:ring-3 has-[[data-slot][aria-invalid=true]]:ring-destructive/20 has-[>[data-align=block-end]]:h-auto has-[>[data-align=block-end]]:flex-col has-[>[data-align=block-start]]:h-auto has-[>[data-align=block-start]]:flex-col has-[>textarea]:h-auto dark:has-[[data-slot][aria-invalid=true]]:ring-destructive/40 has-[>[data-align=block-end]]:[&>input]:pt-3 has-[>[data-align=block-start]]:[&>input]:pb-3 has-[>[data-align=inline-end]]:[&>input]:pr-1 has-[>[data-align=inline-start]]:[&>input]:pl-1 has-data-[shape=rounded]:rounded-full", className),
+		...props
+	});
+}
+const inputGroupAddonVariants = cva("flex h-auto cursor-text items-center justify-center gap-2 py-1.5 text-sm font-normal text-foreground select-none group-data-[disabled=true]/input-group:opacity-50 [&>kbd]:rounded-[calc(var(--radius)-5px)] [&>svg:not([class*='size-'])]:size-4", {
+	variants: { align: {
+		"inline-start": "order-first pl-2.5 has-[>svg]:pr-1 has-[>button]:ml-[-0.3rem] has-[>kbd]:ml-[-0.15rem]",
+		"inline-end": "order-last pr-2.5 has-[>svg]:pl-1 has-[>button]:mr-[-0.3rem] has-[>kbd]:mr-[-0.15rem]",
+		"block-start": "order-first w-full justify-start px-2.5 pt-2 group-has-[>input]/input-group:pt-2 [.border-b]:pb-2",
+		"block-end": "order-last w-full justify-start px-2.5 pb-2 group-has-[>input]/input-group:pb-2 [.border-t]:pt-2"
+	} },
+	defaultVariants: { align: "inline-start" }
+});
+function InputGroupAddon({ className, align = "inline-start", ...props }) {
+	return /* @__PURE__ */ jsx("div", {
+		role: "group",
+		"data-slot": "input-group-addon",
+		"data-align": align,
+		className: cn(inputGroupAddonVariants({ align }), className),
+		onClick: (e) => {
+			if (e.target.closest("button")) return;
+			e.currentTarget.parentElement?.querySelector("input")?.focus();
+		},
+		...props
+	});
+}
+const inputGroupButtonVariants = cva("flex items-center gap-2 text-sm shadow-none", {
+	variants: { size: {
+		xs: "h-6 gap-1 rounded-[calc(var(--radius)-3px)] px-1.5 [&>svg:not([class*='size-'])]:size-3.5",
+		sm: "",
+		"icon-xs": "size-6 rounded-[calc(var(--radius)-3px)] p-0 has-[>svg]:p-0",
+		"icon-sm": "size-8 p-0 has-[>svg]:p-0"
+	} },
+	defaultVariants: { size: "xs" }
+});
+function InputGroupButton({ className, type = "button", variant = "ghost", size = "xs", ...props }) {
+	return /* @__PURE__ */ jsx(Button, {
+		type,
+		"data-size": size,
+		variant,
+		className: cn(inputGroupButtonVariants({ size }), className),
+		...props
+	});
+}
+function InputGroupText({ className, ...props }) {
+	return /* @__PURE__ */ jsx("span", {
+		className: cn("flex items-center gap-2 text-sm text-muted-foreground [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4", className),
+		...props
+	});
+}
+function InputGroupInput({ className, ...props }) {
+	return /* @__PURE__ */ jsx(Input, {
+		"data-slot": "input-group-control",
+		className: cn("flex-1 rounded-none border-0 bg-transparent shadow-none ring-0 focus-visible:ring-0 disabled:bg-transparent aria-invalid:ring-0 dark:bg-transparent dark:disabled:bg-transparent", className),
+		...props
+	});
+}
+function InputGroupTextarea({ className, ...props }) {
+	return /* @__PURE__ */ jsx(Textarea, {
+		"data-slot": "input-group-control",
+		className: cn("flex-1 resize-none rounded-none border-0 bg-transparent py-2 shadow-none ring-0 focus-visible:ring-0 disabled:bg-transparent aria-invalid:ring-0 dark:bg-transparent dark:disabled:bg-transparent", className),
 		...props
 	});
 }
@@ -559,7 +647,7 @@ function ItemFooter({ className, ...props }) {
 function Kbd({ className, ...props }) {
 	return /* @__PURE__ */ jsx("kbd", {
 		"data-slot": "kbd",
-		className: cn("pointer-events-none inline-flex h-5 w-fit min-w-5 items-center justify-center gap-1 rounded-sm bg-muted px-1 font-sans text-xs font-medium text-muted-foreground select-none in-data-[slot=tooltip-content]:bg-background/20 in-data-[slot=tooltip-content]:text-background dark:in-data-[slot=tooltip-content]:bg-background/10 [&_svg:not([class*='size-'])]:size-3", className),
+		className: cn("pointer-events-none inline-flex h-5 w-fit min-w-5 items-center justify-center gap-1 rounded-sm bg-muted px-1 font-sans text-xs font-normal text-muted-foreground select-none [&_svg:not([class*='size-'])]:size-3", className),
 		...props
 	});
 }
@@ -580,7 +668,7 @@ function NativeSelect({ className, size = "default", ...props }) {
 		children: [/* @__PURE__ */ jsx("select", {
 			"data-slot": "native-select",
 			"data-size": size,
-			className: "h-9 w-full min-w-0 appearance-none rounded-md border border-input bg-transparent py-2 pr-8 pl-2.5 text-sm transition-colors outline-none select-none selection:bg-primary selection:text-primary-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:cursor-not-allowed aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 data-[size=sm]:h-7 data-[size=sm]:rounded-[min(var(--radius-md),10px)] data-[size=sm]:py-0.5 dark:bg-input/30 dark:hover:bg-input/50 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40",
+			className: "h-9 w-full min-w-0 appearance-none rounded-md border border-border bg-background py-2 pr-8 pl-2.5 text-sm shadow-xs transition-colors outline-none select-none selection:bg-primary selection:text-primary-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:cursor-not-allowed aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 data-[size=sm]:h-7 data-[size=sm]:rounded-[min(var(--radius-md),10px)] data-[size=sm]:py-0.5 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40",
 			...props
 		}), /* @__PURE__ */ jsx(ChevronDownIcon, {
 			className: "pointer-events-none absolute top-1/2 right-2.5 size-4 -translate-y-1/2 text-muted-foreground select-none",
@@ -612,7 +700,7 @@ function Progress({ className, value, ...props }) {
 		...props,
 		children: /* @__PURE__ */ jsx(Progress$1.Indicator, {
 			"data-slot": "progress-indicator",
-			className: "size-full flex-1 bg-primary transition-all",
+			className: "size-full flex-1 rounded-full bg-emerald-400 transition-all",
 			style: { transform: `translateX(-${100 - (value || 0)}%)` }
 		})
 	});
@@ -762,34 +850,25 @@ function TableCaption({ className, ...props }) {
 	});
 }
 //#endregion
-//#region src/components/ui/textarea.tsx
-function Textarea({ className, ...props }) {
-	return /* @__PURE__ */ jsx("textarea", {
-		"data-slot": "textarea",
-		className: cn("flex field-sizing-content min-h-16 w-full rounded-lg border border-input bg-transparent px-2.5 py-2 text-base transition-colors outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:bg-input/50 disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 md:text-sm dark:bg-input/30 dark:disabled:bg-input/80 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40", className),
-		...props
-	});
-}
-//#endregion
 //#region src/components/ui/toggle.tsx
-const toggleVariants = cva("group/toggle inline-flex items-center justify-center gap-1 rounded-lg text-sm font-medium whitespace-nowrap transition-all outline-none hover:bg-muted hover:text-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 aria-pressed:bg-muted data-[state=on]:bg-muted dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4", {
+const toggleVariants = cva("group/toggle inline-flex items-center justify-center gap-1 rounded-lg bg-background text-sm font-normal whitespace-nowrap transition-all outline-none hover:bg-muted hover:text-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 aria-pressed:bg-muted data-[state=on]:bg-muted dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4", {
 	variants: {
 		variant: {
-			default: "bg-transparent",
-			outline: "border border-input bg-transparent hover:bg-muted"
+			ghost: "focus-visible:inset-ring focus-visible:inset-ring-ring",
+			outline: "border border-border hover:bg-muted"
 		},
 		size: {
-			default: "h-8 min-w-8 px-2.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2",
-			sm: "h-7 min-w-7 rounded-[min(var(--radius-md),12px)] px-2.5 text-[0.8rem] has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3.5",
-			lg: "h-9 min-w-9 px-2.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2"
+			default: "h-8 min-w-8 px-2.5",
+			sm: "h-7 min-w-7 rounded-[min(var(--radius-md),12px)] px-2.5 text-xs [&_svg:not([class*='size-'])]:size-3",
+			lg: "h-9 min-w-9 px-2.5"
 		}
 	},
 	defaultVariants: {
-		variant: "default",
+		variant: "ghost",
 		size: "default"
 	}
 });
-function Toggle({ className, variant = "default", size = "default", ...props }) {
+function Toggle({ className, variant = "ghost", size = "default", ...props }) {
 	return /* @__PURE__ */ jsx(Toggle$1.Root, {
 		"data-slot": "toggle",
 		className: cn(toggleVariants({
@@ -804,7 +883,7 @@ function Toggle({ className, variant = "default", size = "default", ...props }) 
 //#region src/components/ui/toggle-group.tsx
 const ToggleGroupContext = React.createContext({
 	size: "default",
-	variant: "default",
+	variant: "ghost",
 	spacing: 2,
 	orientation: "horizontal"
 });
@@ -829,7 +908,7 @@ function ToggleGroup({ className, variant, size, spacing = 2, orientation = "hor
 		})
 	});
 }
-function ToggleGroupItem({ className, children, variant = "default", size = "default", ...props }) {
+function ToggleGroupItem({ className, children, variant = "ghost", size = "default", ...props }) {
 	const context = React.useContext(ToggleGroupContext);
 	return /* @__PURE__ */ jsx(ToggleGroup$1.Item, {
 		"data-slot": "toggle-group-item",
@@ -869,12 +948,16 @@ function TooltipContent({ className, sideOffset = 0, children, ...props }) {
 	return /* @__PURE__ */ jsx(Tooltip$1.Portal, { children: /* @__PURE__ */ jsxs(Tooltip$1.Content, {
 		"data-slot": "tooltip-content",
 		sideOffset,
-		className: cn("z-50 inline-flex w-fit max-w-xs origin-(--radix-tooltip-content-transform-origin) items-center gap-1.5 rounded-md bg-foreground px-3 py-1.5 text-xs text-background has-data-[slot=kbd]:pr-1.5 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 **:data-[slot=kbd]:relative **:data-[slot=kbd]:isolate **:data-[slot=kbd]:z-50 **:data-[slot=kbd]:rounded-sm data-[state=delayed-open]:animate-in data-[state=delayed-open]:fade-in-0 data-[state=delayed-open]:zoom-in-95 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95", className),
+		className: cn("z-50 inline-flex w-fit max-w-xs origin-(--radix-tooltip-content-transform-origin) items-center gap-2 rounded-md bg-primary px-3 py-2 text-sm text-primary-foreground shadow-md data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 **:data-[slot=kbd]:relative **:data-[slot=kbd]:isolate **:data-[slot=kbd]:z-50 **:data-[slot=kbd]:rounded-sm data-[state=delayed-open]:animate-in data-[state=delayed-open]:fade-in-0 data-[state=delayed-open]:zoom-in-95 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95", className),
 		...props,
-		children: [children, /* @__PURE__ */ jsx(Tooltip$1.Arrow, { className: "z-50 size-2.5 translate-y-[calc(-50%_-_2px)] rotate-45 rounded-[2px] bg-foreground fill-foreground" })]
+		children: [children, /* @__PURE__ */ jsx(Tooltip$1.Arrow, {
+			width: 10,
+			height: 6,
+			className: "z-50 fill-primary"
+		})]
 	}) });
 }
 //#endregion
-export { Alert, AlertAction, AlertDescription, AlertTitle, Badge, Breadcrumb, BreadcrumbEllipsis, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator, Button, Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, Checkbox, Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle, Field, FieldContent, FieldDescription, FieldError, FieldGroup, FieldLabel, FieldLegend, FieldSeparator, FieldSet, FieldTitle, Input, Item, ItemActions, ItemContent, ItemDescription, ItemFooter, ItemGroup, ItemHeader, ItemMedia, ItemSeparator, ItemTitle, Kbd, KbdGroup, Label, NativeSelect, NativeSelectOptGroup, NativeSelectOption, Progress, Separator, Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger, Table, TableBody, TableCaption, TableCell, TableFooter, TableHead, TableHeader, TableRow, Textarea, Toggle, ToggleGroup, ToggleGroupItem, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger, badgeVariants, buttonVariants, toggleVariants };
+export { Alert, AlertAction, AlertDescription, AlertTitle, Badge, Breadcrumb, BreadcrumbEllipsis, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator, Button, Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, Checkbox, Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle, Field, FieldContent, FieldDescription, FieldError, FieldGroup, FieldLabel, FieldLegend, FieldSeparator, FieldSet, FieldTitle, Input, InputGroup, InputGroupAddon, InputGroupButton, InputGroupInput, InputGroupText, InputGroupTextarea, Item, ItemActions, ItemContent, ItemDescription, ItemFooter, ItemGroup, ItemHeader, ItemMedia, ItemSeparator, ItemTitle, Kbd, KbdGroup, Label, NativeSelect, NativeSelectOptGroup, NativeSelectOption, Progress, Separator, Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger, Table, TableBody, TableCaption, TableCell, TableFooter, TableHead, TableHeader, TableRow, Textarea, Toggle, ToggleGroup, ToggleGroupItem, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger, badgeVariants, buttonVariants, inputVariants, toggleVariants };
 
 //# sourceMappingURL=index.mjs.map

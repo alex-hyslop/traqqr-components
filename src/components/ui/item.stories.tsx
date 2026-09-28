@@ -13,7 +13,7 @@ import { Badge } from './badge'
 import { Button } from './button'
 
 const meta = {
-  title: 'ui/Item',
+  title: 'Molecules/Item',
   component: Item,
   parameters: {
     layout: 'padded',
