@@ -48,11 +48,10 @@ This repo is consumed as an npm git dependency. The `@/` path alias is **dev-too
 
 The package is installed pinned to a tag (e.g. `github:alex-hyslop/traqqr-components#v0.1.1`). npm git installs receive the **repo tree at that tag** — consumers must never run a build at install time, so `dist/` is committed.
 
-Release flow, in order:
+Releases are automated with [release-it](https://github.com/release-it/release-it) (`.release-it.json`).
 
-1. Bump `version` in `package.json` (e.g. `npm version 0.1.2 --no-git-tag-version`).
-2. `npm ci` — verifies `package-lock.json` is in sync with the manifest.
-3. `npm run build:lib` — must succeed with zero unresolved imports.
-4. `npx tsc -b` — no new errors outside `*.stories.tsx` (pre-existing story type errors are tracked separately; do not add new ones).
-5. Commit, tag `vX.Y.Z`, then `git push origin main vX.Y.Z`.
-6. `dist/` must be fresh: if sources changed since the last build, rebuild and commit before tagging. A tag whose `dist/` doesn't match its sources ships broken code.
+- From a clean, up-to-date `main` working tree, run `npx release-it` (interactive) or `npx release-it patch|minor|major`.
+- `before:init` hooks run `npm ci`, `npm run build:lib`, and `npx tsc -b` first; if any fail, nothing is committed or tagged.
+- release-it then bumps the version, commits `package.json`, the lockfile, `CHANGELOG.md` and fresh `dist/` in one commit (`chore(release): vX.Y.Z`), tags `vX.Y.Z`, pushes, and creates a GitHub release with notes generated from conventional commits.
+
+Never tag manually — a tag whose `dist/` doesn't match its sources ships broken code. The GitHub release step needs `GITHUB_TOKEN` (e.g. `GITHUB_TOKEN=$(gh auth token) npx release-it`); commit, tag, and push work without it, and a missing release can be published afterwards with `release-it --no-increment`.
