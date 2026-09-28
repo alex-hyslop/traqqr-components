@@ -57,7 +57,7 @@ export const HeaderOnly: Story = {
 }
 
 export const IntegrationVariant: Story = {
-  name: 'Composition: Integration card (Figma node 4160:6394)',
+  name: 'Integration card',
   render: () => (
     <Card className="w-[347px] gap-4 p-6">
       <div className="flex w-full items-center justify-between">
@@ -84,7 +84,7 @@ export const IntegrationVariant: Story = {
 }
 
 export const TestimonialVariant: Story = {
-  name: 'Composition: Testimonial card',
+  name: 'Testimonial card',
   render: () => (
     <Card className="w-[368px]">
       <CardContent>
@@ -106,7 +106,7 @@ export const TestimonialVariant: Story = {
 }
 
 export const CtaVariant: Story = {
-  name: 'Composition: CTA card (centred, 40px padding, no icon)',
+  name: 'CTA card',
   render: () => (
     <Card className="w-[368px] items-center gap-4 p-10 text-center">
       <CardTitle>Connect your Facebook account</CardTitle>
