@@ -30,23 +30,24 @@ export const Default: Story = {
         <EmptyTitle>No sites yet</EmptyTitle>
         <EmptyDescription>Add your first site to start tracking events.</EmptyDescription>
       </EmptyHeader>
-      <EmptyContent>
-        <Button shape="rounded">New site</Button>
-      </EmptyContent>
     </Empty>
   ),
 }
 
-export const WithoutButton: Story = {
+export const WithButton: Story = {
+  name: 'With button (button=true)',
   render: () => (
     <Empty>
       <EmptyHeader>
         <EmptyMedia variant="icon">
           <Globe />
         </EmptyMedia>
-        <EmptyTitle>No conversions yet</EmptyTitle>
-        <EmptyDescription>Conversions will appear here once tracked.</EmptyDescription>
+        <EmptyTitle>No sites yet</EmptyTitle>
+        <EmptyDescription>Add your first site to start tracking events.</EmptyDescription>
       </EmptyHeader>
+      <EmptyContent>
+        <Button shape="rounded">New site</Button>
+      </EmptyContent>
     </Empty>
   ),
 }
