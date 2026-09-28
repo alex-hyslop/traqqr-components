@@ -1,4 +1,5 @@
 import type { Preview } from '@storybook/react-vite'
+import React from 'react'
 import '../src/index.css'
 
 const preview: Preview = {
@@ -17,6 +18,32 @@ const preview: Preview = {
       test: 'todo'
     }
   },
+  initialGlobals: {
+    theme: 'light',
+  },
+  globalTypes: {
+    theme: {
+      description: 'Light / dark theme',
+      toolbar: {
+        title: 'Theme',
+        icon: 'circlehollow',
+        items: [
+          { value: 'light', icon: 'sun', title: 'Light' },
+          { value: 'dark', icon: 'moon', title: 'Dark' },
+        ],
+        dynamicTitle: true,
+      },
+    },
+  },
+  decorators: [
+    (Story, context) => {
+      const theme = context.globals.theme ?? 'light'
+      React.useEffect(() => {
+        document.documentElement.classList.toggle('dark', theme === 'dark')
+      }, [theme])
+      return <Story />
+    },
+  ],
 };
 
 export default preview;
