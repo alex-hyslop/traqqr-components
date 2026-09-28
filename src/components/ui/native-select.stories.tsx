@@ -10,7 +10,7 @@ const Options = () => (
 )
 
 const meta = {
-  title: 'Atoms/NativeSelect',
+  title: 'ui/NativeSelect',
   component: NativeSelect,
   parameters: { layout: 'padded' },
   tags: ['autodocs'],

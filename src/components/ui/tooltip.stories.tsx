@@ -12,7 +12,7 @@ type TooltipStoryArgs = ComponentProps<typeof TooltipContent> & {
 }
 
 const meta: Meta<TooltipStoryArgs> = {
-  title: 'Atoms/Tooltip',
+  title: 'ui/Tooltip',
   component: TooltipContent,
   parameters: { layout: 'centered' },
   tags: ['autodocs'],

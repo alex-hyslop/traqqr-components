@@ -14,7 +14,7 @@ const VARIANTS = ['default', 'outline', 'secondary', 'ghost', 'destructive', 'li
 const SIZES = ['xs', 'sm', 'default', 'lg'] as const
 
 const meta: Meta<ButtonStoryArgs> = {
-  title: 'Atoms/Button',
+  title: 'ui/Button',
   component: Button,
   parameters: { layout: 'centered' },
   tags: ['autodocs'],

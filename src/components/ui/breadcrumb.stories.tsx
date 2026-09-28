@@ -9,7 +9,7 @@ import {
 } from './breadcrumb'
 
 const meta = {
-  title: 'Molecules/Breadcrumb',
+  title: 'ui/Breadcrumb',
   component: Breadcrumb,
   parameters: { layout: 'padded' },
   tags: ['autodocs'],

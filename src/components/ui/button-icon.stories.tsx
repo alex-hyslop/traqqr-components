@@ -6,7 +6,7 @@ const VARIANTS = ['default', 'outline', 'secondary', 'ghost', 'destructive'] as 
 const SIZES = ['icon-xs', 'icon-sm', 'icon', 'icon-lg'] as const
 
 const meta = {
-  title: 'Atoms/IconButton',
+  title: 'ui/IconButton',
   component: Button,
   parameters: { layout: 'centered' },
   tags: ['autodocs'],

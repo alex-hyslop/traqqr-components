@@ -13,7 +13,7 @@ type InputGroupStoryArgs = ComponentProps<typeof InputGroup> & {
 }
 
 const meta: Meta<InputGroupStoryArgs> = {
-  title: 'Atoms/InputGroup',
+  title: 'ui/InputGroup',
   component: InputGroup,
   parameters: { layout: 'centered' },
   tags: ['autodocs'],

@@ -13,7 +13,7 @@ type FieldLabelStoryArgs = ComponentProps<typeof FieldLabel> & {
 }
 
 const meta: Meta<FieldLabelStoryArgs> = {
-  title: 'Atoms/FieldLabel',
+  title: 'ui/FieldLabel',
   component: FieldLabel,
   parameters: { layout: 'centered' },
   tags: ['autodocs'],

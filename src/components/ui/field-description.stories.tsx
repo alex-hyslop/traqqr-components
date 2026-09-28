@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { FieldDescription } from './field'
 
 const meta = {
-  title: 'Atoms/FieldDescription',
+  title: 'ui/FieldDescription',
   component: FieldDescription,
   parameters: { layout: 'centered' },
   tags: ['autodocs'],

@@ -4,7 +4,7 @@ import { Alert, AlertAction, AlertDescription, AlertTitle } from './alert'
 import { Button } from './button'
 
 const meta = {
-  title: 'Molecules/Alert',
+  title: 'ui/Alert',
   component: Alert,
   parameters: {
     layout: 'padded',

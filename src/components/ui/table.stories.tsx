@@ -17,7 +17,7 @@ const invoices = [
 ]
 
 const meta = {
-  title: 'Molecules/Table',
+  title: 'ui/Table',
   component: Table,
   parameters: { layout: 'padded' },
   tags: ['autodocs'],

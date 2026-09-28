@@ -9,7 +9,7 @@ const SIZES = ['sm', 'default', 'lg'] as const
 type ToggleStoryArgs = ComponentProps<typeof Toggle> & { leftIcon?: boolean; rightIcon?: boolean }
 
 const meta: Meta<ToggleStoryArgs> = {
-  title: 'Atoms/Toggle',
+  title: 'ui/Toggle',
   component: Toggle,
   parameters: { layout: 'centered' },
   tags: ['autodocs'],

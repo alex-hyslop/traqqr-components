@@ -8,7 +8,7 @@ const VARIANTS = ['default', 'secondary', 'destructive', 'outline', 'ghost', 'su
 type BadgeStoryArgs = ComponentProps<typeof Badge> & { leftIcon?: boolean; rightIcon?: boolean }
 
 const meta: Meta<BadgeStoryArgs> = {
-  title: 'Atoms/Badge',
+  title: 'ui/Badge',
   component: Badge,
   parameters: { layout: 'centered' },
   tags: ['autodocs'],

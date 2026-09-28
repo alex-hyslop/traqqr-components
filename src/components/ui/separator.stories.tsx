@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Separator } from './separator'
 
 const meta = {
-  title: 'Atoms/Separator',
+  title: 'ui/Separator',
   component: Separator,
   parameters: { layout: 'padded' },
   tags: ['autodocs'],
