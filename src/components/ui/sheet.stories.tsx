@@ -77,26 +77,3 @@ export const CreateSiteDrawer: Story = {
     </Sheet>
   ),
 }
-
-export const ConfigureSnippetDrawer: Story = {
-  name: 'Configure snippet (560px)',
-  render: () => (
-    <Sheet defaultOpen>
-      <SheetTrigger asChild>
-        <Button>Open</Button>
-      </SheetTrigger>
-      <SheetContent className="sm:max-w-[560px]">
-        <SheetHeader>
-          <SheetTitle>Configure snippet</SheetTitle>
-          <SheetDescription>Adjust snippet settings.</SheetDescription>
-        </SheetHeader>
-        <SheetFooter>
-          <SheetClose asChild>
-            <Button variant="outline">Cancel</Button>
-          </SheetClose>
-          <Button>Save</Button>
-        </SheetFooter>
-      </SheetContent>
-    </Sheet>
-  ),
-}
