@@ -1,7 +1,7 @@
 {
   "name": "traqqr-components",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "files": [
     "dist",
@@ -34,9 +34,9 @@
   },
   "peerDependencies": {
     "lucide-react": "^1.48.0",
-    "react": "^19.2.8",
-    "react-dom": "^19.2.8",
-    "tailwindcss": "^4.3.3"
+    "react": "^19",
+    "react-dom": "^19",
+    "tailwindcss": "^4"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "latest",
