@@ -29,8 +29,9 @@ export const Playground: Story = {
       control: 'select',
       options: ['top', 'right', 'bottom', 'left'],
     },
+    footer: { control: 'boolean' },
   },
-  args: { side: 'right' },
+  args: { side: 'right', footer: true },
   render: (args) => (
     <Sheet defaultOpen>
       <SheetTrigger asChild>
@@ -41,12 +42,14 @@ export const Playground: Story = {
           <SheetTitle>Create site</SheetTitle>
           <SheetDescription>Add a new site to start tracking.</SheetDescription>
         </SheetHeader>
-        <SheetFooter>
-          <SheetClose asChild>
-            <Button variant="outline">Cancel</Button>
-          </SheetClose>
-          <Button>Create</Button>
-        </SheetFooter>
+        {args.footer && (
+          <SheetFooter>
+            <SheetClose asChild>
+              <Button variant="outline">Cancel</Button>
+            </SheetClose>
+            <Button>Create</Button>
+          </SheetFooter>
+        )}
       </SheetContent>
     </Sheet>
   ),
