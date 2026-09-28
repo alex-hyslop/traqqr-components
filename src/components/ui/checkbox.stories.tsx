@@ -1,7 +1,11 @@
+import type { ComponentProps } from 'react'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Checkbox } from './checkbox'
+import { Label } from './label'
 
-const meta = {
+type CheckboxStoryArgs = ComponentProps<typeof Checkbox> & { label?: string }
+
+const meta: Meta<CheckboxStoryArgs> = {
   title: 'ui/Checkbox',
   component: Checkbox,
   parameters: { layout: 'centered' },
@@ -10,14 +14,22 @@ const meta = {
     checked: { control: 'boolean' },
     disabled: { control: 'boolean' },
     'aria-invalid': { control: 'boolean' },
+    label: { control: 'text' },
   },
-  args: { checked: false, disabled: false, 'aria-invalid': false, 'aria-label': 'Checkbox' },
-} satisfies Meta<typeof Checkbox>
+  args: { disabled: false, 'aria-invalid': false, label: 'Accept terms and conditions' },
+}
 
 export default meta
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<CheckboxStoryArgs>
 
-export const Playground: Story = {}
+export const Playground: Story = {
+  render: ({ label, ...args }) => (
+    <div className="flex items-center gap-2">
+      <Checkbox id="checkbox-playground" {...args} />
+      <Label htmlFor="checkbox-playground">{label}</Label>
+    </div>
+  ),
+}
 
 export const States: Story = {
   name: 'Interaction × Data state',
