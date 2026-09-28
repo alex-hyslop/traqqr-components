@@ -6,7 +6,11 @@ const meta = {
   component: Textarea,
   tags: ['autodocs'],
   parameters: { layout: 'centered' },
-  args: { placeholder: 'Type your message...' },
+  argTypes: {
+    disabled: { control: 'boolean' },
+    'aria-invalid': { control: 'boolean' },
+  },
+  args: { placeholder: 'Type your message...', disabled: false, 'aria-invalid': false },
 } satisfies Meta<typeof Textarea>
 
 export default meta
@@ -16,4 +20,8 @@ export const Playground: Story = {}
 
 export const Disabled: Story = {
   args: { disabled: true, value: 'Disabled content' },
+}
+
+export const Destructive: Story = {
+  args: { 'aria-invalid': true, value: 'Invalid content' },
 }
