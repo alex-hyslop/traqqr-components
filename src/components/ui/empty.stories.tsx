@@ -11,7 +11,7 @@ import {
 import { Button } from './button'
 
 const meta = {
-  title: 'ui/Empty',
+  title: 'Molecules/Empty',
   component: Empty,
   parameters: {
     layout: 'padded',

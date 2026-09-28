@@ -1,32 +1,32 @@
+import type { ComponentProps } from 'react'
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { ChevronRight, Loader2, Mail, X } from 'lucide-react'
+import { ChevronRight, Loader2, Mail } from 'lucide-react'
 import { Kbd } from './kbd'
 import { Button } from './button'
 
-const meta = {
-  title: 'ui/Button',
+type ButtonStoryArgs = ComponentProps<typeof Button> & {
+  leftIcon?: boolean
+  rightIcon?: boolean
+  kbd?: boolean
+}
+
+const VARIANTS = ['default', 'outline', 'secondary', 'ghost', 'destructive', 'link'] as const
+const SIZES = ['xs', 'sm', 'default', 'lg'] as const
+
+const meta: Meta<ButtonStoryArgs> = {
+  title: 'Atoms/Button',
   component: Button,
-  parameters: {
-    layout: 'centered',
-  },
+  parameters: { layout: 'centered' },
   tags: ['autodocs'],
   argTypes: {
-    variant: {
-      control: 'select',
-      options: ['default', 'secondary', 'outline', 'ghost', 'destructive', 'link'],
-    },
-    size: {
-      control: 'select',
-      options: ['default', 'xs', 'sm', 'lg', 'icon', 'icon-xs', 'icon-sm', 'icon-lg'],
-    },
-    shape: {
-      control: 'select',
-      options: ['default', 'rounded'],
-    },
+    variant: { control: 'select', options: VARIANTS },
+    size: { control: 'select', options: SIZES },
+    shape: { control: 'inline-radio', options: ['default', 'rounded'] },
     disabled: { control: 'boolean' },
-    asChild: { control: 'boolean' },
+    asChild: { control: false },
     leftIcon: { control: 'boolean' },
     rightIcon: { control: 'boolean' },
+    kbd: { control: 'boolean' },
   },
   args: {
     children: 'Button',
@@ -36,51 +36,83 @@ const meta = {
     disabled: false,
     leftIcon: false,
     rightIcon: false,
+    kbd: false,
   },
-} satisfies Meta<typeof Button & { leftIcon: boolean; rightIcon: boolean }>
+}
 
 export default meta
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<ButtonStoryArgs>
 
 export const Playground: Story = {
-  render: ({ leftIcon, rightIcon, ...args }) => (
+  render: ({ leftIcon, rightIcon, kbd, children, ...args }) => (
     <Button {...args}>
       {leftIcon && <Mail data-icon="inline-start" />}
-      {args.children}
+      {children}
       {rightIcon && <ChevronRight data-icon="inline-end" />}
+      {kbd && <Kbd>⇧</Kbd>}
     </Button>
   ),
 }
 
-export const Variants: Story = {
+export const States: Story = {
+  name: 'Variant × State (Default / Hover / Focus / Disabled)',
+  parameters: {
+    pseudo: { hover: ['.state-hover'], focusVisible: ['.state-focus'] },
+  },
   render: () => (
-    <div className="flex flex-wrap items-center gap-3">
-      <Button variant="default">Default</Button>
-      <Button variant="secondary">Secondary</Button>
-      <Button variant="outline">Outline</Button>
-      <Button variant="ghost">Ghost</Button>
-      <Button variant="destructive">Destructive</Button>
-      <Button variant="link">Link</Button>
+    <div className="grid grid-cols-[auto_repeat(4,auto)] items-center gap-3 text-xs">
+      <span />
+      <span>Default</span>
+      <span>Hover</span>
+      <span>Focus</span>
+      <span>Disabled</span>
+      {VARIANTS.map((variant) => (
+        <div key={variant} className="contents">
+          <span className="text-muted-foreground">{variant}</span>
+          <Button variant={variant}>Button</Button>
+          <Button variant={variant} className="state-hover">Button</Button>
+          <Button variant={variant} className="state-focus">Button</Button>
+          <Button variant={variant} disabled>Button</Button>
+        </div>
+      ))}
     </div>
   ),
 }
 
 export const Sizes: Story = {
+  name: 'Size: xs / sm / default / lg',
+  render: () => (
+    <div className="flex flex-col items-start gap-3">
+      {SIZES.map((size) => (
+        <div key={size} className="flex items-center gap-3">
+          <Button size={size}>Button</Button>
+          <Button size={size}>
+            <Mail data-icon="inline-start" />
+            Button
+            <ChevronRight data-icon="inline-end" />
+          </Button>
+          <Button size={size} shape="rounded">Button</Button>
+        </div>
+      ))}
+    </div>
+  ),
+}
+
+export const Roundness: Story = {
+  name: 'Roundness: Default / Rounded',
   render: () => (
     <div className="flex flex-wrap items-center gap-3">
-      <Button size="xs">Extra small</Button>
-      <Button size="sm">Small</Button>
-      <Button size="default">Default</Button>
-      <Button size="lg">Large</Button>
-      <Button size="icon" aria-label="Icon button">
-        <ChevronRight />
-      </Button>
+      {VARIANTS.filter((v) => v !== 'link').map((variant) => (
+        <Button key={variant} variant={variant} shape="rounded">
+          {variant}
+        </Button>
+      ))}
     </div>
   ),
 }
 
 export const WithIcons: Story = {
-  name: 'Icon left / right',
+  name: 'Left icon / Right icon',
   render: () => (
     <div className="flex flex-wrap items-center gap-3">
       <Button>
@@ -93,14 +125,24 @@ export const WithIcons: Story = {
   ),
 }
 
-export const Disabled: Story = {
-  args: { disabled: true },
+export const WithKbd: Story = {
+  name: 'Kbd',
+  render: () => (
+    <div className="flex flex-wrap items-center gap-3">
+      <Button>
+        Button <Kbd>⇧</Kbd>
+      </Button>
+      <Button variant="outline">
+        Save <Kbd>⌘S</Kbd>
+      </Button>
+    </div>
+  ),
 }
 
 export const Loading: Story = {
   render: () => (
     <Button disabled>
-      <Loader2 className="animate-spin" /> Loading
+      <Loader2 className="animate-spin" data-icon="inline-start" /> Loading
     </Button>
   ),
 }
@@ -109,70 +151,6 @@ export const AsChild: Story = {
   render: () => (
     <Button asChild>
       <a href="https://ui.shadcn.com">Go to shadcn/ui</a>
-    </Button>
-  ),
-}
-
-export const DangerButton: Story = {
-  name: 'Danger button',
-  args: { variant: 'destructive', children: 'Delete account' },
-}
-
-export const GhostLinkButton: Story = {
-  name: 'Ghost link button',
-  render: () => (
-    <div className="flex items-center gap-3">
-      <Button variant="ghost">Ghost</Button>
-      <Button variant="link">Link</Button>
-    </div>
-  ),
-}
-
-export const IconButtonClose: Story = {
-  name: 'Icon button (close/x)',
-  render: () => (
-    <Button variant="ghost" size="icon" aria-label="Close">
-      <X />
-    </Button>
-  ),
-}
-
-export const Roundness: Story = {
-  name: 'Roundness: Default / Rounded',
-  render: () => (
-    <div className="flex flex-wrap items-center gap-3">
-      <Button shape="default">Default (rounded-md)</Button>
-      <Button shape="rounded">Rounded (pill)</Button>
-      <Button shape="rounded" variant="outline">
-        Rounded outline
-      </Button>
-      <Button shape="rounded" size="icon" aria-label="Round icon button">
-        <ChevronRight />
-      </Button>
-    </div>
-  ),
-}
-
-export const AdvanceRoundButtons: Story = {
-  name: 'Advance round buttons',
-  render: () => (
-    <div className="flex flex-wrap items-center gap-3">
-      <Button shape="rounded">Rounded</Button>
-      <Button shape="rounded" variant="outline">
-        Rounded outline
-      </Button>
-      <Button shape="rounded" size="icon" aria-label="Round icon button">
-        <ChevronRight />
-      </Button>
-    </div>
-  ),
-}
-
-export const WithKbd: Story = {
-  name: 'With Kbd',
-  render: () => (
-    <Button variant="outline">
-      Save <Kbd>⌘S</Kbd>
     </Button>
   ),
 }

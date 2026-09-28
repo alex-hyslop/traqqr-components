@@ -12,7 +12,7 @@ const ToggleGroupContext = React.createContext<
   }
 >({
   size: "default",
-  variant: "default",
+  variant: "ghost",
   spacing: 2,
   orientation: "horizontal",
 })
@@ -56,7 +56,7 @@ function ToggleGroup({
 function ToggleGroupItem({
   className,
   children,
-  variant = "default",
+  variant = "ghost",
   size = "default",
   ...props
 }: React.ComponentProps<typeof ToggleGroupPrimitive.Item> &

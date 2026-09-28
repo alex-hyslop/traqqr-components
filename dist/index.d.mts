@@ -27,7 +27,7 @@ declare function AlertAction({
 //#endregion
 //#region src/components/ui/badge.d.ts
 declare const badgeVariants: (props?: ({
-  variant?: "default" | "destructive" | "secondary" | "outline" | "ghost" | "link" | "success" | "warning" | null | undefined;
+  variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link" | "success" | "warning" | null | undefined;
 } & _$class_variance_authority_types0.ClassProp) | undefined) => string;
 declare function Badge({
   className,
@@ -75,7 +75,7 @@ declare function BreadcrumbEllipsis({
 //#region src/components/ui/button.d.ts
 declare const buttonVariants: (props?: ({
   shape?: "default" | "rounded" | null | undefined;
-  variant?: "default" | "destructive" | "secondary" | "outline" | "ghost" | "link" | null | undefined;
+  variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link" | null | undefined;
   size?: "default" | "xs" | "sm" | "lg" | "icon" | "icon-xs" | "icon-sm" | "icon-lg" | null | undefined;
 } & _$class_variance_authority_types0.ClassProp) | undefined) => string;
 declare function Button({
@@ -202,8 +202,11 @@ declare function FieldTitle({
 }: React.ComponentProps<"div">): React$1.JSX.Element;
 declare function FieldDescription({
   className,
+  align,
   ...props
-}: React.ComponentProps<"p">): React$1.JSX.Element;
+}: React.ComponentProps<"p"> & {
+  align?: "left" | "right";
+}): React$1.JSX.Element;
 declare function FieldSeparator({
   children,
   className,
@@ -223,11 +226,51 @@ declare function FieldError({
 }): React$1.JSX.Element | null;
 //#endregion
 //#region src/components/ui/input.d.ts
+declare const inputVariants: (props?: ({
+  shape?: "default" | "rounded" | null | undefined;
+} & _$class_variance_authority_types0.ClassProp) | undefined) => string;
 declare function Input({
   className,
   type,
+  shape,
   ...props
-}: React$1.ComponentProps<"input">): React$1.JSX.Element;
+}: React$1.ComponentProps<"input"> & VariantProps<typeof inputVariants>): React$1.JSX.Element;
+//#endregion
+//#region src/components/ui/input-group.d.ts
+declare function InputGroup({
+  className,
+  ...props
+}: React$1.ComponentProps<"div">): React$1.JSX.Element;
+declare const inputGroupAddonVariants: (props?: ({
+  align?: "inline-start" | "inline-end" | "block-start" | "block-end" | null | undefined;
+} & _$class_variance_authority_types0.ClassProp) | undefined) => string;
+declare function InputGroupAddon({
+  className,
+  align,
+  ...props
+}: React$1.ComponentProps<"div"> & VariantProps<typeof inputGroupAddonVariants>): React$1.JSX.Element;
+declare const inputGroupButtonVariants: (props?: ({
+  size?: "xs" | "sm" | "icon-xs" | "icon-sm" | null | undefined;
+} & _$class_variance_authority_types0.ClassProp) | undefined) => string;
+declare function InputGroupButton({
+  className,
+  type,
+  variant,
+  size,
+  ...props
+}: Omit<React$1.ComponentProps<typeof Button>, "size"> & VariantProps<typeof inputGroupButtonVariants>): React$1.JSX.Element;
+declare function InputGroupText({
+  className,
+  ...props
+}: React$1.ComponentProps<"span">): React$1.JSX.Element;
+declare function InputGroupInput({
+  className,
+  ...props
+}: React$1.ComponentProps<typeof Input>): React$1.JSX.Element;
+declare function InputGroupTextarea({
+  className,
+  ...props
+}: React$1.ComponentProps<"textarea">): React$1.JSX.Element;
 //#endregion
 //#region src/components/ui/separator.d.ts
 declare function Separator({
@@ -406,7 +449,7 @@ declare function Textarea({
 //#endregion
 //#region src/components/ui/toggle.d.ts
 declare const toggleVariants: (props?: ({
-  variant?: "default" | "outline" | null | undefined;
+  variant?: "outline" | "ghost" | null | undefined;
   size?: "default" | "sm" | "lg" | null | undefined;
 } & _$class_variance_authority_types0.ClassProp) | undefined) => string;
 declare function Toggle({
@@ -455,5 +498,5 @@ declare function TooltipContent({
   ...props
 }: React$1.ComponentProps<typeof Tooltip$1.Content>): React$1.JSX.Element;
 //#endregion
-export { Alert, AlertAction, AlertDescription, AlertTitle, Badge, Breadcrumb, BreadcrumbEllipsis, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator, Button, Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, Checkbox, Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle, Field, FieldContent, FieldDescription, FieldError, FieldGroup, FieldLabel, FieldLegend, FieldSeparator, FieldSet, FieldTitle, Input, Item, ItemActions, ItemContent, ItemDescription, ItemFooter, ItemGroup, ItemHeader, ItemMedia, ItemSeparator, ItemTitle, Kbd, KbdGroup, Label, NativeSelect, NativeSelectOptGroup, NativeSelectOption, Progress, Separator, Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger, Table, TableBody, TableCaption, TableCell, TableFooter, TableHead, TableHeader, TableRow, Textarea, Toggle, ToggleGroup, ToggleGroupItem, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger, badgeVariants, buttonVariants, toggleVariants };
+export { Alert, AlertAction, AlertDescription, AlertTitle, Badge, Breadcrumb, BreadcrumbEllipsis, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator, Button, Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, Checkbox, Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle, Field, FieldContent, FieldDescription, FieldError, FieldGroup, FieldLabel, FieldLegend, FieldSeparator, FieldSet, FieldTitle, Input, InputGroup, InputGroupAddon, InputGroupButton, InputGroupInput, InputGroupText, InputGroupTextarea, Item, ItemActions, ItemContent, ItemDescription, ItemFooter, ItemGroup, ItemHeader, ItemMedia, ItemSeparator, ItemTitle, Kbd, KbdGroup, Label, NativeSelect, NativeSelectOptGroup, NativeSelectOption, Progress, Separator, Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger, Table, TableBody, TableCaption, TableCell, TableFooter, TableHead, TableHeader, TableRow, Textarea, Toggle, ToggleGroup, ToggleGroupItem, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger, badgeVariants, buttonVariants, inputVariants, toggleVariants };
 //# sourceMappingURL=index.d.mts.map
