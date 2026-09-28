@@ -6,6 +6,14 @@
 - Deviations from stock shadcn (sizing, variants, colors, added props) are applied **once, in the installed component's source** (e.g. `src/components/ui/button.tsx`), never per-usage or via a wrapper component that reimplements it.
 - This applies every time a new component is needed, in every future task — not just the current Figma handover work.
 
+## React Server Components ("use client")
+
+The package is consumed by React Server Components frameworks (Next.js App Router), so:
+
+- Components that use React hooks (`useState`, `useMemo`, `createContext`, …) or interactive Radix primitives must start with `"use client"` (followed by a blank line), e.g. `checkbox`, `field`, `label`, `progress`, `sheet`, `toggle`, `toggle-group`, `tooltip`. Match shadcn's own registry output when installing.
+- Purely presentational components (`alert`, `badge`, `card`, `input`, `table`, …) stay directive-free so consumers can render them on the server.
+- **The directive that ships is the tsdown `banner` in `tsdown.config.ts`.** The published build is one bundled `dist/index.mjs`, which strips per-module directives — the banner prepends `"use client"` to it. Keep the per-file directives in sources regardless: they are the semantic record of which components are client-only and they future-proof an unbundled build.
+
 ## Design system (Traqqr dashboard handover)
 
 - Source of truth: `docs/traqqr-design-handover.md` (Figma file `AuTDmsP70q09vix9pojWv0`).
