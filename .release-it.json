@@ -3,9 +3,16 @@
   "git": {
     "requireBranch": "main",
     "requireCommits": true,
+    "requireCleanWorkingDir": false,
     "commitMessage": "chore(release): v${version}",
     "tagName": "v${version}",
-    "addUntrackedFiles": true
+    "addUntrackedFiles": true,
+    "add": [
+      "package.json",
+      "package-lock.json",
+      "CHANGELOG.md",
+      "dist"
+    ]
   },
   "npm": {
     "publish": false

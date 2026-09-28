@@ -28,7 +28,7 @@ declare function AlertAction({
 //#endregion
 //#region src/components/ui/badge.d.ts
 declare const badgeVariants: (props?: ({
-  variant?: "default" | "destructive" | "secondary" | "outline" | "ghost" | "link" | "success" | "warning" | null | undefined;
+  variant?: "default" | "secondary" | "destructive" | "outline" | "ghost" | "link" | "success" | "warning" | null | undefined;
 } & _$class_variance_authority_types0.ClassProp) | undefined) => string;
 declare function Badge({
   className,
@@ -76,8 +76,8 @@ declare function BreadcrumbEllipsis({
 //#region src/components/ui/button.d.ts
 declare const buttonVariants: (props?: ({
   shape?: "default" | "rounded" | null | undefined;
-  variant?: "default" | "destructive" | "secondary" | "outline" | "ghost" | "link" | null | undefined;
-  size?: "default" | "icon" | "xs" | "sm" | "lg" | "icon-xs" | "icon-sm" | "icon-lg" | null | undefined;
+  variant?: "default" | "secondary" | "destructive" | "outline" | "ghost" | "link" | null | undefined;
+  size?: "default" | "xs" | "sm" | "lg" | "icon" | "icon-xs" | "icon-sm" | "icon-lg" | null | undefined;
 } & _$class_variance_authority_types0.ClassProp) | undefined) => string;
 declare function Button({
   className,
