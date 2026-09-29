@@ -91,11 +91,19 @@ declare function Button({
 }): React$1.JSX.Element;
 //#endregion
 //#region src/components/ui/card.d.ts
+declare const cardVariants: (props?: ({
+  variant?: "default" | "translucent" | null | undefined;
+  tone?: "default" | "destructive" | null | undefined;
+  layout?: "default" | "centered" | null | undefined;
+} & _$class_variance_authority_types0.ClassProp) | undefined) => string;
 declare function Card({
   className,
   size,
+  variant,
+  tone,
+  layout,
   ...props
-}: React$1.ComponentProps<"div"> & {
+}: React$1.ComponentProps<"div"> & VariantProps<typeof cardVariants> & {
   size?: "default" | "sm";
 }): React$1.JSX.Element;
 declare function CardHeader({
@@ -399,6 +407,10 @@ declare function SheetHeader({
   className,
   ...props
 }: React$1.ComponentProps<"div">): React$1.JSX.Element;
+declare function SheetBody({
+  className,
+  ...props
+}: React$1.ComponentProps<"div">): React$1.JSX.Element;
 declare function SheetFooter({
   className,
   ...props
@@ -503,5 +515,5 @@ declare function TooltipContent({
   ...props
 }: React$1.ComponentProps<typeof Tooltip$1.Content>): React$1.JSX.Element;
 //#endregion
-export { Alert, AlertAction, AlertDescription, AlertTitle, Badge, Breadcrumb, BreadcrumbEllipsis, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator, Button, Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardMedia, CardTitle, Checkbox, Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle, Field, FieldContent, FieldDescription, FieldError, FieldGroup, FieldLabel, FieldLegend, FieldSeparator, FieldSet, FieldTitle, Input, InputGroup, InputGroupAddon, InputGroupButton, InputGroupInput, InputGroupText, InputGroupTextarea, Item, ItemActions, ItemContent, ItemDescription, ItemFooter, ItemGroup, ItemHeader, ItemMedia, ItemSeparator, ItemTitle, Kbd, KbdGroup, Label, NativeSelect, NativeSelectOptGroup, NativeSelectOption, Progress, Separator, Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger, Table, TableBody, TableCaption, TableCell, TableFooter, TableHead, TableHeader, TableRow, Textarea, Toggle, ToggleGroup, ToggleGroupItem, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger, badgeVariants, buttonVariants, inputVariants, toggleVariants };
+export { Alert, AlertAction, AlertDescription, AlertTitle, Badge, Breadcrumb, BreadcrumbEllipsis, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator, Button, Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardMedia, CardTitle, Checkbox, Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle, Field, FieldContent, FieldDescription, FieldError, FieldGroup, FieldLabel, FieldLegend, FieldSeparator, FieldSet, FieldTitle, Input, InputGroup, InputGroupAddon, InputGroupButton, InputGroupInput, InputGroupText, InputGroupTextarea, Item, ItemActions, ItemContent, ItemDescription, ItemFooter, ItemGroup, ItemHeader, ItemMedia, ItemSeparator, ItemTitle, Kbd, KbdGroup, Label, NativeSelect, NativeSelectOptGroup, NativeSelectOption, Progress, Separator, Sheet, SheetBody, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger, Table, TableBody, TableCaption, TableCell, TableFooter, TableHead, TableHeader, TableRow, Textarea, Toggle, ToggleGroup, ToggleGroupItem, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger, badgeVariants, buttonVariants, cardVariants, inputVariants, toggleVariants };
 //# sourceMappingURL=index.d.mts.map

@@ -1,4 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import { ChevronRight } from 'lucide-react'
+import { Badge } from './badge'
 import {
   Table,
   TableBody,
@@ -81,5 +83,54 @@ export const ComparisonPills: Story = {
         </TableRow>
       </TableBody>
     </Table>
+  ),
+}
+
+const sites = [
+  { id: 'orms30mlrqju', name: 'Google', domains: 'google.com', pixel: '—' },
+  { id: 'm12zkrpxhlw3', name: 'Traqqr', domains: 'traqqr.ai, www.traqqr.ai', pixel: 'Main pixel' },
+]
+
+export const ClickableRows: Story = {
+  name: 'Clickable rows (Sites)',
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Add `data-clickable` to a TableRow and put a link in it: the link is stretched over the whole row, and on hover the row tints, the name underlines and the chevron turns foreground.',
+      },
+    },
+  },
+  render: () => (
+    <div className="max-w-4xl overflow-hidden rounded-md border">
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead className="w-[170px]">Site ID</TableHead>
+            <TableHead>Name</TableHead>
+            <TableHead>Allowed Domains</TableHead>
+            <TableHead className="w-[130px]">Meta Pixel</TableHead>
+            <TableHead className="w-12" />
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {sites.map((site) => (
+            <TableRow key={site.id} data-clickable>
+              <TableCell>
+                <Badge variant="secondary">{site.id}</Badge>
+              </TableCell>
+              <TableCell>
+                <a href="#">{site.name}</a>
+              </TableCell>
+              <TableCell>{site.domains}</TableCell>
+              <TableCell>{site.pixel}</TableCell>
+              <TableCell className="text-center">
+                <ChevronRight className="inline size-4" />
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </div>
   ),
 }

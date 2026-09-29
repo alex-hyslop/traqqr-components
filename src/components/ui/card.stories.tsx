@@ -1,5 +1,6 @@
+import type { ComponentProps } from 'react'
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { ChevronRight } from 'lucide-react'
+import { ChevronRight, Shield, Trash2 } from 'lucide-react'
 import {
   Card,
   CardAction,
@@ -13,94 +14,157 @@ import {
 import { Button } from './button'
 import { Badge } from './badge'
 
-const meta = {
+const meta: Meta<ComponentProps<typeof Card>> = {
   title: 'ui/Card',
   component: Card,
   parameters: { layout: 'centered' },
   tags: ['autodocs'],
   argTypes: {
-    size: {
-      control: 'select',
-      options: ['default', 'sm'],
-    },
+    variant: { control: 'inline-radio', options: ['default', 'translucent'] },
+    tone: { control: 'inline-radio', options: ['default', 'destructive'] },
+    layout: { control: 'inline-radio', options: ['default', 'centered'] },
+    size: { control: 'inline-radio', options: ['default', 'sm'] },
   },
-  args: { size: 'default' },
-} satisfies Meta<typeof Card>
+  args: { variant: 'default', tone: 'default', layout: 'default', size: 'default' },
+}
 
 export default meta
-type Story = StoryObj<typeof meta>
+
+type Story = StoryObj<ComponentProps<typeof Card>>
 
 export const Playground: Story = {
   render: (args) => (
-    <Card {...args} className="w-[368px]">
+    <Card {...args} className="w-[540px]">
       <CardHeader>
-        <CardTitle>Login to your account</CardTitle>
-        <CardDescription>
-          Enter your email below to login to your account
-        </CardDescription>
-        <CardAction>
-          <Button variant="link">Sign up</Button>
-        </CardAction>
+        <CardTitle>
+          <Shield />
+          First-Party Proxy
+        </CardTitle>
+        <CardDescription>Connect your Cloudflare account to enable first-party tracking.</CardDescription>
       </CardHeader>
-      <CardContent>
-        <p className="text-sm text-muted-foreground">Card content goes here.</p>
-      </CardContent>
       <CardFooter>
-        <Button className="w-full">Login</Button>
+        <Button variant="outline">Connect Cloudflare</Button>
       </CardFooter>
     </Card>
   ),
 }
 
-export const Default: Story = {
+export const SectionCard: Story = {
+  name: 'Section card (header + content)',
   render: () => (
-    <Card className="w-[368px]">
+    <Card className="w-[540px]">
       <CardHeader>
-        <CardTitle>Login to your account</CardTitle>
-        <CardDescription>
-          Enter your email below to login to your account
-        </CardDescription>
-        <CardAction>
-          <Button variant="link">Sign up</Button>
-        </CardAction>
+        <CardTitle>1 Site</CardTitle>
+        <CardDescription>Click a site to view and edit its configuration.</CardDescription>
       </CardHeader>
       <CardContent>
-        <p className="text-sm text-muted-foreground">Card content goes here.</p>
+        <div className="h-24 rounded-md border border-dashed" />
       </CardContent>
+    </Card>
+  ),
+}
+
+export const WithFooter: Story = {
+  name: 'Header + footer band',
+  render: () => (
+    <Card className="w-[540px]">
+      <CardHeader>
+        <CardTitle>
+          <Shield />
+          First-Party Proxy
+        </CardTitle>
+        <CardDescription>Connect your Cloudflare account to enable first-party tracking.</CardDescription>
+      </CardHeader>
       <CardFooter>
-        <Button className="w-full">Login</Button>
+        <Button variant="outline">Connect Cloudflare</Button>
       </CardFooter>
     </Card>
   ),
 }
 
-export const HeaderOnly: Story = {
+export const HeaderAction: Story = {
+  name: 'Header action (stacks below on mobile)',
   render: () => (
-    <Card className="w-[368px]">
+    <Card className="w-full max-w-[540px]">
       <CardHeader>
-        <CardTitle>Login to your account</CardTitle>
-        <CardDescription>
-          Enter your email below to login to your account
-        </CardDescription>
+        <CardTitle>Conversions</CardTitle>
+        <CardDescription>Events you send to Meta as conversions.</CardDescription>
+        <CardAction>
+          <Button shape="rounded">Create Conversion</Button>
+        </CardAction>
       </CardHeader>
     </Card>
+  ),
+}
+
+export const DangerZone: Story = {
+  name: 'Tone: destructive (Danger Zone)',
+  render: () => (
+    <Card tone="destructive" className="w-[720px]">
+      <CardHeader>
+        <CardTitle>
+          <Trash2 />
+          Danger Zone
+        </CardTitle>
+        <CardDescription>
+          Permanently delete this site and all its configuration. This action cannot be undone.
+        </CardDescription>
+        <CardAction>
+          <Button>Delete site</Button>
+        </CardAction>
+      </CardHeader>
+    </Card>
+  ),
+}
+
+export const Centered: Story = {
+  name: 'Layout: centered (Connect card)',
+  render: () => (
+    <Card layout="centered" variant="translucent" className="w-[720px]">
+      <CardHeader>
+        <CardTitle>No Facebook Pixels yet</CardTitle>
+        <CardDescription>
+          Create a pixel credential here. Then link it to a site from the Site detail page to start
+          server-side event forwarding.
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <Button shape="rounded">
+          Connect Pixel <ChevronRight data-icon="inline-end" />
+        </Button>
+      </CardContent>
+    </Card>
+  ),
+}
+
+export const Translucent: Story = {
+  name: 'Variant: translucent',
+  render: () => (
+    <div className="rounded-2xl bg-[linear-gradient(204.6deg,#1c2c3e_25%,rgb(255_171_64/0.42)_38%,#17212c_55%)] p-10">
+      <Card variant="translucent" className="w-[480px]">
+        <CardHeader>
+          <CardTitle>Reverse Proxy</CardTitle>
+          <CardDescription>Cards over the app background use the translucent surface.</CardDescription>
+        </CardHeader>
+      </Card>
+    </div>
   ),
 }
 
 export const IntegrationVariant: Story = {
   name: 'Integration card',
   render: () => (
-    <Card className="w-[347px] gap-4 p-6">
-      <div className="flex w-full items-center justify-between">
+    <Card className="w-[347px]">
+      <CardContent className="flex items-center justify-between">
         <CardMedia>
           <div className="size-12 rounded-lg bg-muted" />
         </CardMedia>
-        <CardAction className="static row-span-1 flex items-center gap-2 self-center">
+        <div className="flex items-center gap-2">
           <Badge variant="outline">Outline</Badge>
           <ChevronRight className="size-4 text-muted-foreground" />
-        </CardAction>
-      </div>
-      <CardHeader className="px-0">
+        </div>
+      </CardContent>
+      <CardHeader>
         <CardTitle>Facebook</CardTitle>
         <CardDescription>Server-side event forwarding via Conversions API</CardDescription>
       </CardHeader>

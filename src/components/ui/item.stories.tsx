@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { BadgeCheck } from 'lucide-react'
+import { BadgeCheck, Copy } from 'lucide-react'
 import { Kbd } from './kbd'
 import {
   Item,
   ItemActions,
   ItemContent,
+  ItemGroup,
   ItemDescription,
   ItemMedia,
   ItemTitle,
@@ -60,35 +61,41 @@ export const Playground: Story = {
 }
 
 export const StepList: Story = {
-  name: 'Step list (Number media + Kbd)',
+  name: 'Step list (Event Inspector)',
   render: () => (
-    <div className="flex max-w-md flex-col gap-2">
-      <Item variant="outline">
+    <ItemGroup className="max-w-3xl gap-1">
+      <Item size="sm" className="px-0">
         <ItemMedia>
-          <Badge className="size-6 rounded-full p-0">1</Badge>
+          <Badge variant="outline">1</Badge>
         </ItemMedia>
         <ItemContent>
-          <ItemTitle>Install the snippet</ItemTitle>
-          <ItemDescription>Add the tracking snippet to your site&apos;s head.</ItemDescription>
+          <ItemTitle>
+            Add this to your website URL: <Kbd>?tqrInspector=1</Kbd>
+          </ItemTitle>
+          <ItemDescription className="text-xs">
+            Use &amp;tqrInspector=1 if your URL already has parameters.
+          </ItemDescription>
         </ItemContent>
         <ItemActions>
-          <Kbd>1</Kbd>
-        </ItemActions>
-      </Item>
-      <Item variant="outline">
-        <ItemMedia>
-          <Badge className="size-6 rounded-full p-0">2</Badge>
-        </ItemMedia>
-        <ItemContent>
-          <ItemTitle>Verify the connection</ItemTitle>
-          <ItemDescription>Confirm events are being received.</ItemDescription>
-        </ItemContent>
-        <ItemActions>
-          <Button size="sm" variant="outline">
-            Verify
+          <Button variant="outline">
+            <Copy data-icon="inline-start" /> Copy
           </Button>
         </ItemActions>
       </Item>
-    </div>
+      {[
+        'Browse your site — the inspector captures Meta Pixel events automatically',
+        "Click 'Download Meta Pixel Payload' on the overlay",
+        'Upload or paste the downloaded JSON below',
+      ].map((title, i) => (
+        <Item key={title} size="sm" className="px-0">
+          <ItemMedia>
+            <Badge variant="outline">{i + 2}</Badge>
+          </ItemMedia>
+          <ItemContent>
+            <ItemTitle>{title}</ItemTitle>
+          </ItemContent>
+        </Item>
+      ))}
+    </ItemGroup>
   ),
 }

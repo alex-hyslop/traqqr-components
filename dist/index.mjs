@@ -196,18 +196,46 @@ function Button({ className, variant = "default", size = "default", shape = "def
 }
 //#endregion
 //#region src/components/ui/card.tsx
-function Card({ className, size = "default", ...props }) {
+const cardVariants = cva("group/card flex flex-col gap-4 overflow-hidden rounded-xl border py-(--card-spacing) text-sm text-card-foreground [--card-spacing:--spacing(6)] has-data-[slot=card-footer]:pb-0 has-[>img:first-child]:pt-0 data-[size=sm]:gap-3 data-[size=sm]:[--card-spacing:--spacing(4)] data-[size=sm]:has-data-[slot=card-footer]:pb-0 data-[layout=centered]:py-10 *:[img:first-child]:rounded-t-xl *:[img:last-child]:rounded-b-xl", {
+	variants: {
+		variant: {
+			default: "bg-card",
+			translucent: "bg-card-translucent"
+		},
+		tone: {
+			default: "",
+			destructive: "border-destructive bg-destructive-subtle"
+		},
+		layout: {
+			default: "",
+			centered: "items-stretch text-center"
+		}
+	},
+	defaultVariants: {
+		variant: "default",
+		tone: "default",
+		layout: "default"
+	}
+});
+function Card({ className, size = "default", variant = "default", tone = "default", layout = "default", ...props }) {
 	return /* @__PURE__ */ jsx("div", {
 		"data-slot": "card",
 		"data-size": size,
-		className: cn("group/card flex flex-col gap-(--card-spacing) overflow-hidden rounded-xl bg-card py-(--card-spacing) text-sm text-card-foreground ring-1 ring-foreground/10 [--card-spacing:--spacing(4)] has-data-[slot=card-footer]:pb-0 has-[>img:first-child]:pt-0 data-[size=sm]:[--card-spacing:--spacing(3)] data-[size=sm]:has-data-[slot=card-footer]:pb-0 *:[img:first-child]:rounded-t-xl *:[img:last-child]:rounded-b-xl", className),
+		"data-variant": variant,
+		"data-tone": tone,
+		"data-layout": layout,
+		className: cn(cardVariants({
+			variant,
+			tone,
+			layout
+		}), className),
 		...props
 	});
 }
 function CardHeader({ className, ...props }) {
 	return /* @__PURE__ */ jsx("div", {
 		"data-slot": "card-header",
-		className: cn("group/card-header @container/card-header grid auto-rows-min items-start gap-1 rounded-t-xl px-(--card-spacing) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-spacing)", className),
+		className: cn("group/card-header @container/card-header grid auto-rows-min items-start gap-1.5 rounded-t-xl px-(--card-spacing) has-data-[slot=card-description]:grid-rows-[auto_auto] sm:has-data-[slot=card-action]:grid-cols-[1fr_auto] group-data-[layout=centered]/card:justify-items-center [.border-b]:pb-(--card-spacing)", className),
 		...props
 	});
 }
@@ -221,35 +249,35 @@ function CardMedia({ className, ...props }) {
 function CardTitle({ className, ...props }) {
 	return /* @__PURE__ */ jsx("div", {
 		"data-slot": "card-title",
-		className: cn("font-heading text-base leading-6 font-normal group-data-[size=sm]/card:text-sm", className),
+		className: cn("flex items-center gap-2 font-heading text-base leading-6 font-normal group-data-[layout=centered]/card:text-lg group-data-[layout=centered]/card:leading-7 group-data-[size=sm]/card:text-sm group-data-[tone=destructive]/card:text-destructive [&>svg]:shrink-0 [&>svg:not([class*='size-'])]:size-5", className),
 		...props
 	});
 }
 function CardDescription({ className, ...props }) {
 	return /* @__PURE__ */ jsx("div", {
 		"data-slot": "card-description",
-		className: cn("text-sm text-muted-foreground", className),
+		className: cn("text-sm text-muted-foreground group-data-[tone=destructive]/card:text-secondary-foreground", className),
 		...props
 	});
 }
 function CardAction({ className, ...props }) {
 	return /* @__PURE__ */ jsx("div", {
 		"data-slot": "card-action",
-		className: cn("col-start-2 row-span-2 row-start-1 self-start justify-self-end", className),
+		className: cn("justify-self-start sm:col-start-2 sm:row-span-2 sm:row-start-1 sm:self-center sm:justify-self-end", className),
 		...props
 	});
 }
 function CardContent({ className, ...props }) {
 	return /* @__PURE__ */ jsx("div", {
 		"data-slot": "card-content",
-		className: cn("px-(--card-spacing)", className),
+		className: cn("px-(--card-spacing) group-data-[layout=centered]/card:flex group-data-[layout=centered]/card:flex-col group-data-[layout=centered]/card:items-center", className),
 		...props
 	});
 }
 function CardFooter({ className, ...props }) {
 	return /* @__PURE__ */ jsx("div", {
 		"data-slot": "card-footer",
-		className: cn("flex items-center rounded-b-xl border-t bg-muted/50 p-(--card-spacing)", className),
+		className: cn("flex items-center gap-2 rounded-b-xl border-t bg-muted px-(--card-spacing) py-4", className),
 		...props
 	});
 }
@@ -347,7 +375,7 @@ function Separator({ className, orientation = "horizontal", decorative = true, .
 function FieldSet({ className, ...props }) {
 	return /* @__PURE__ */ jsx("fieldset", {
 		"data-slot": "field-set",
-		className: cn("flex flex-col gap-4 has-[>[data-slot=checkbox-group]]:gap-3 has-[>[data-slot=radio-group]]:gap-3", className),
+		className: cn("flex flex-col gap-3 has-[>[data-slot=checkbox-group]]:gap-3 has-[>[data-slot=radio-group]]:gap-3", className),
 		...props
 	});
 }
@@ -355,7 +383,7 @@ function FieldLegend({ className, variant = "legend", ...props }) {
 	return /* @__PURE__ */ jsx("legend", {
 		"data-slot": "field-legend",
 		"data-variant": variant,
-		className: cn("mb-1.5 font-medium data-[variant=label]:text-sm data-[variant=legend]:text-base", className),
+		className: cn("mb-3 font-normal data-[variant=label]:text-sm data-[variant=label]:leading-5 data-[variant=legend]:text-base data-[variant=legend]:leading-6", className),
 		...props
 	});
 }
@@ -752,14 +780,14 @@ function SheetContent({ className, children, side = "right", showCloseButton = t
 	return /* @__PURE__ */ jsxs(SheetPortal, { children: [/* @__PURE__ */ jsx(SheetOverlay, {}), /* @__PURE__ */ jsxs(Dialog.Content, {
 		"data-slot": "sheet-content",
 		"data-side": side,
-		className: cn("fixed z-50 flex flex-col gap-4 bg-popover bg-clip-padding text-sm text-popover-foreground shadow-lg transition duration-200 ease-in-out data-[side=bottom]:inset-x-0 data-[side=bottom]:bottom-0 data-[side=bottom]:h-auto data-[side=bottom]:border-t data-[side=left]:inset-y-0 data-[side=left]:left-0 data-[side=left]:h-full data-[side=left]:w-3/4 data-[side=left]:border-r data-[side=right]:inset-y-0 data-[side=right]:right-0 data-[side=right]:h-full data-[side=right]:w-3/4 data-[side=right]:border-l data-[side=top]:inset-x-0 data-[side=top]:top-0 data-[side=top]:h-auto data-[side=top]:border-b data-[side=left]:sm:max-w-sm data-[side=right]:sm:max-w-sm data-open:animate-in data-open:fade-in-0 data-[side=bottom]:data-open:slide-in-from-bottom-10 data-[side=left]:data-open:slide-in-from-left-10 data-[side=right]:data-open:slide-in-from-right-10 data-[side=top]:data-open:slide-in-from-top-10 data-closed:animate-out data-closed:fade-out-0 data-[side=bottom]:data-closed:slide-out-to-bottom-10 data-[side=left]:data-closed:slide-out-to-left-10 data-[side=right]:data-closed:slide-out-to-right-10 data-[side=top]:data-closed:slide-out-to-top-10", className),
+		className: cn("fixed z-50 flex flex-col gap-4 bg-background bg-clip-padding text-sm text-foreground shadow-lg transition duration-200 ease-in-out data-[side=bottom]:inset-x-0 data-[side=bottom]:bottom-0 data-[side=bottom]:h-auto data-[side=bottom]:border-t data-[side=left]:inset-y-0 data-[side=left]:left-0 data-[side=left]:h-full data-[side=left]:w-80 data-[side=left]:border-r data-[side=right]:inset-y-0 data-[side=right]:right-0 data-[side=right]:h-full data-[side=right]:w-[90%] data-[side=right]:border-l data-[side=top]:inset-x-0 data-[side=top]:top-0 data-[side=top]:h-auto data-[side=top]:border-b data-[side=right]:sm:max-w-[560px] data-open:animate-in data-open:fade-in-0 data-[side=bottom]:data-open:slide-in-from-bottom-10 data-[side=left]:data-open:slide-in-from-left-10 data-[side=right]:data-open:slide-in-from-right-10 data-[side=top]:data-open:slide-in-from-top-10 data-closed:animate-out data-closed:fade-out-0 data-[side=bottom]:data-closed:slide-out-to-bottom-10 data-[side=left]:data-closed:slide-out-to-left-10 data-[side=right]:data-closed:slide-out-to-right-10 data-[side=top]:data-closed:slide-out-to-top-10", className),
 		...props,
 		children: [children, showCloseButton && /* @__PURE__ */ jsx(Dialog.Close, {
 			"data-slot": "sheet-close",
 			asChild: true,
 			children: /* @__PURE__ */ jsxs(Button, {
 				variant: "ghost",
-				className: "absolute top-3 right-3",
+				className: "absolute top-6.5 right-6",
 				size: "icon-sm",
 				children: [/* @__PURE__ */ jsx(XIcon, {}), /* @__PURE__ */ jsx("span", {
 					className: "sr-only",
@@ -772,21 +800,28 @@ function SheetContent({ className, children, side = "right", showCloseButton = t
 function SheetHeader({ className, ...props }) {
 	return /* @__PURE__ */ jsx("div", {
 		"data-slot": "sheet-header",
-		className: cn("flex flex-col gap-0.5 p-4", className),
+		className: cn("flex flex-col gap-3.5 px-6 pt-6 pb-2 *:data-[slot=sheet-title]:pr-9.5", className),
+		...props
+	});
+}
+function SheetBody({ className, ...props }) {
+	return /* @__PURE__ */ jsx("div", {
+		"data-slot": "sheet-body",
+		className: cn("flex min-h-0 flex-1 flex-col gap-6 overflow-y-auto px-6", className),
 		...props
 	});
 }
 function SheetFooter({ className, ...props }) {
 	return /* @__PURE__ */ jsx("div", {
 		"data-slot": "sheet-footer",
-		className: cn("mt-auto flex flex-col gap-2 p-4", className),
+		className: cn("mt-auto flex flex-col gap-2 p-6", className),
 		...props
 	});
 }
 function SheetTitle({ className, ...props }) {
 	return /* @__PURE__ */ jsx(Dialog.Title, {
 		"data-slot": "sheet-title",
-		className: cn("font-heading text-2xl font-normal text-foreground", className),
+		className: cn("font-heading text-2xl leading-8 font-normal text-foreground", className),
 		...props
 	});
 }
@@ -834,7 +869,7 @@ function TableFooter({ className, ...props }) {
 function TableRow({ className, ...props }) {
 	return /* @__PURE__ */ jsx("tr", {
 		"data-slot": "table-row",
-		className: cn("border-b transition-colors hover:bg-muted/50 has-aria-expanded:bg-muted/50 data-[state=selected]:bg-muted", className),
+		className: cn("border-b transition-colors has-aria-expanded:bg-muted/50 data-[state=selected]:bg-muted data-clickable:relative data-clickable:cursor-pointer data-clickable:hover:bg-foreground-subtle data-clickable:[&_a]:outline-none data-clickable:[&_a]:after:absolute data-clickable:[&_a]:after:inset-0 data-clickable:[&_a]:focus-visible:after:ring-3 data-clickable:[&_a]:focus-visible:after:ring-ring/50 data-clickable:hover:[&_a]:underline data-clickable:[&_svg]:text-muted-foreground data-clickable:hover:[&_svg]:text-foreground", className),
 		...props
 	});
 }
@@ -894,10 +929,10 @@ function Toggle({ className, variant = "ghost", size = "default", ...props }) {
 const ToggleGroupContext = React.createContext({
 	size: "default",
 	variant: "ghost",
-	spacing: 2,
+	spacing: 0,
 	orientation: "horizontal"
 });
-function ToggleGroup({ className, variant, size, spacing = 2, orientation = "horizontal", children, ...props }) {
+function ToggleGroup({ className, variant, size, spacing = 0, orientation = "horizontal", children, ...props }) {
 	return /* @__PURE__ */ jsx(ToggleGroup$1.Root, {
 		"data-slot": "toggle-group",
 		"data-variant": variant,
@@ -925,7 +960,7 @@ function ToggleGroupItem({ className, children, variant = "ghost", size = "defau
 		"data-variant": context.variant || variant,
 		"data-size": context.size || size,
 		"data-spacing": context.spacing,
-		className: cn("shrink-0 group-data-[spacing=0]/toggle-group:rounded-none group-data-[spacing=0]/toggle-group:px-2 focus:z-10 focus-visible:z-10 group-data-[spacing=0]/toggle-group:has-data-[icon=inline-end]:pr-1.5 group-data-[spacing=0]/toggle-group:has-data-[icon=inline-start]:pl-1.5 group-data-horizontal/toggle-group:data-[spacing=0]:first:rounded-l-lg group-data-vertical/toggle-group:data-[spacing=0]:first:rounded-t-lg group-data-horizontal/toggle-group:data-[spacing=0]:last:rounded-r-lg group-data-vertical/toggle-group:data-[spacing=0]:last:rounded-b-lg group-data-horizontal/toggle-group:data-[spacing=0]:data-[variant=outline]:border-l-0 group-data-vertical/toggle-group:data-[spacing=0]:data-[variant=outline]:border-t-0 group-data-horizontal/toggle-group:data-[spacing=0]:data-[variant=outline]:first:border-l group-data-vertical/toggle-group:data-[spacing=0]:data-[variant=outline]:first:border-t", toggleVariants({
+		className: cn("shrink-0 group-data-[spacing=0]/toggle-group:rounded-none focus:z-10 focus-visible:z-10 group-data-horizontal/toggle-group:data-[spacing=0]:first:rounded-l-lg group-data-vertical/toggle-group:data-[spacing=0]:first:rounded-t-lg group-data-horizontal/toggle-group:data-[spacing=0]:last:rounded-r-lg group-data-vertical/toggle-group:data-[spacing=0]:last:rounded-b-lg data-[size=sm]:group-data-horizontal/toggle-group:data-[spacing=0]:first:rounded-l-md data-[size=sm]:group-data-horizontal/toggle-group:data-[spacing=0]:last:rounded-r-md group-data-horizontal/toggle-group:data-[spacing=0]:data-[variant=outline]:border-l-0 group-data-vertical/toggle-group:data-[spacing=0]:data-[variant=outline]:border-t-0 group-data-horizontal/toggle-group:data-[spacing=0]:data-[variant=outline]:first:border-l group-data-vertical/toggle-group:data-[spacing=0]:data-[variant=outline]:first:border-t", toggleVariants({
 			variant: context.variant || variant,
 			size: context.size || size
 		}), className),
@@ -968,6 +1003,6 @@ function TooltipContent({ className, sideOffset = 0, children, ...props }) {
 	}) });
 }
 //#endregion
-export { Alert, AlertAction, AlertDescription, AlertTitle, Badge, Breadcrumb, BreadcrumbEllipsis, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator, Button, Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardMedia, CardTitle, Checkbox, Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle, Field, FieldContent, FieldDescription, FieldError, FieldGroup, FieldLabel, FieldLegend, FieldSeparator, FieldSet, FieldTitle, Input, InputGroup, InputGroupAddon, InputGroupButton, InputGroupInput, InputGroupText, InputGroupTextarea, Item, ItemActions, ItemContent, ItemDescription, ItemFooter, ItemGroup, ItemHeader, ItemMedia, ItemSeparator, ItemTitle, Kbd, KbdGroup, Label, NativeSelect, NativeSelectOptGroup, NativeSelectOption, Progress, Separator, Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger, Table, TableBody, TableCaption, TableCell, TableFooter, TableHead, TableHeader, TableRow, Textarea, Toggle, ToggleGroup, ToggleGroupItem, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger, badgeVariants, buttonVariants, inputVariants, toggleVariants };
+export { Alert, AlertAction, AlertDescription, AlertTitle, Badge, Breadcrumb, BreadcrumbEllipsis, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator, Button, Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardMedia, CardTitle, Checkbox, Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle, Field, FieldContent, FieldDescription, FieldError, FieldGroup, FieldLabel, FieldLegend, FieldSeparator, FieldSet, FieldTitle, Input, InputGroup, InputGroupAddon, InputGroupButton, InputGroupInput, InputGroupText, InputGroupTextarea, Item, ItemActions, ItemContent, ItemDescription, ItemFooter, ItemGroup, ItemHeader, ItemMedia, ItemSeparator, ItemTitle, Kbd, KbdGroup, Label, NativeSelect, NativeSelectOptGroup, NativeSelectOption, Progress, Separator, Sheet, SheetBody, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger, Table, TableBody, TableCaption, TableCell, TableFooter, TableHead, TableHeader, TableRow, Textarea, Toggle, ToggleGroup, ToggleGroupItem, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger, badgeVariants, buttonVariants, cardVariants, inputVariants, toggleVariants };
 
 //# sourceMappingURL=index.mjs.map
