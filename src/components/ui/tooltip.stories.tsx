@@ -102,3 +102,21 @@ export const LogoutHover: Story = {
     </TooltipProvider>
   ),
 }
+
+export const LongText: Story = {
+  name: 'Long text (wraps at 240px)',
+  render: () => (
+    <TooltipProvider>
+      <div className="p-24">
+        <Tooltip open>
+          <TooltipTrigger asChild>
+            <Button variant="outline">Tracked events</Button>
+          </TooltipTrigger>
+          <TooltipContent side="top">
+            All events Traqqr received from this site in the selected range.
+          </TooltipContent>
+        </Tooltip>
+      </div>
+    </TooltipProvider>
+  ),
+}

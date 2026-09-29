@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Globe } from 'lucide-react'
+import { CircleAlert, Globe, RotateCw } from 'lucide-react'
 import {
   Empty,
   EmptyContent,
@@ -49,6 +49,28 @@ export const WithButton: Story = {
       </EmptyHeader>
       <EmptyContent>
         <Button shape="rounded">New site</Button>
+      </EmptyContent>
+    </Empty>
+  ),
+}
+
+export const ErrorState: Story = {
+  name: 'Error state',
+  render: () => (
+    <Empty>
+      <EmptyHeader>
+        <EmptyMedia variant="icon">
+          <CircleAlert className="text-foreground" />
+        </EmptyMedia>
+        <EmptyTitle>Couldn’t load this data</EmptyTitle>
+        <EmptyDescription>
+          Something went wrong on our side. Check your connection and try again.
+        </EmptyDescription>
+      </EmptyHeader>
+      <EmptyContent>
+        <Button variant="outline" shape="rounded">
+          <RotateCw data-icon="inline-start" /> Try again
+        </Button>
       </EmptyContent>
     </Empty>
   ),

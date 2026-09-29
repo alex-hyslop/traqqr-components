@@ -42,7 +42,7 @@ This repo is consumed as an npm git dependency. The `@/` path alias is **dev-too
 ## Dependencies
 
 - **peerDependencies** (consumer provides them, never bundled — tsdown externalizes peers and dependencies automatically): `react`, `react-dom` (`^19`), `tailwindcss` (`^4`), `lucide-react`.
-- **dependencies** (shipped to consumers): `radix-ui`, `class-variance-authority`, `cn`, `shadcn` (required at runtime — `styles.css` imports `shadcn/tailwind.css`), `tw-animate-css`, `@fontsource-variable/manrope`, `@fontsource/space-mono`.
+- **dependencies** (shipped to consumers): `radix-ui`, `class-variance-authority`, `cn`, `sonner`, `shadcn` (required at runtime — `styles.css` imports `shadcn/tailwind.css`), `tw-animate-css`, `@fontsource-variable/manrope`, `@fontsource/space-mono`.
 - **devDependencies**: `@tailwindcss/vite` and all build/Storybook/test tooling. Never move a dev tool into `dependencies` — consumers would install it.
 - Never add `react` or `react-dom` to a build output — a bundled second React breaks hooks and hydration in the consumer.
 
