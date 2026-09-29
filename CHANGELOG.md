@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.2.0](https://github.com/alex-hyslop/traqqr-components/compare/v0.1.2...v0.2.0) (2026-09-29)
+
+### Features
+
+* **ui:** add AlertDialog, Skeleton and Sonner; Tooltip wraps at 240px ([b1b0890](https://github.com/alex-hyslop/traqqr-components/commit/b1b089097346545ef6470cb07db8263ba2c7d20d))
+* **ui:** apply Kev's elements handover to existing components ([ebfed59](https://github.com/alex-hyslop/traqqr-components/commit/ebfed5948ddf12682dc4584729a7f8b406256ad4))
+* **alert:** add success/warning variants and warning tokens from Figma ([f89fb35](https://github.com/alex-hyslop/traqqr-components/commit/f89fb35649704824ec4469e0f99fe8c3e080abc7))
+* **card:** add CardMedia gradient logo tile with overridable tokens ([8dae020](https://github.com/alex-hyslop/traqqr-components/commit/8dae02068b88c3334492574a100bbf22f2353818))
+
+### Upgrade notes (changes to existing components)
+
+* **Card:** padding is now `py-6` / `px-6` with `gap-4` and a 1px border (was 16px all round with a ring); CardFooter is a filled `muted` band.
+* **Sheet:** right side is `w-[90%] sm:max-w-[560px]`, left side `w-80`; surface is `background`. Use the new `SheetBody` for a scrolling body.
+* **ToggleGroup:** items are joined by default (`spacing` defaults to 0).
+* **Table:** plain rows no longer highlight on hover; add `data-clickable` to a row for the clickable style.
+* **FieldSet / FieldLegend:** 12px section spacing, Regular-weight legend.
+* **Tooltip:** wraps at 240px (`max-w-60`).
+
+### Documentation
+
+* **storybook:** add collapsed breadcrumb ellipsis example ([3893c57](https://github.com/alex-hyslop/traqqr-components/commit/3893c57d7320be2a050918c318050f1da74eb377))
+* **storybook:** add Label to Checkbox playground ([e08eff3](https://github.com/alex-hyslop/traqqr-components/commit/e08eff3fecad7143985ad465fa70814608e75025))
+
 ## [0.1.2](https://github.com/alex-hyslop/traqqr-components/compare/v0.1.1...v0.1.2) (2026-09-28)
 
 ### Features
